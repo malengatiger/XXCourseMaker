@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/AR_layout0"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey"
+    android:gravity="left|center"
+    android:padding="10dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xwhite_rounded_corners"
+        android:gravity="left|center"
+        android:padding="15dp" >
+
+        <TextView
+            android:id="@+id/AR_txtPriority"
+            style="@style/GreyCountBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/AR_txtActName"
+            style="@style/TextStyleBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_toRightOf="@id/AR_txtPriority"
+            android:padding="5dp"
+            android:text="Name of the Activity" />
+
+        <TextView
+            android:id="@+id/AR_txtActDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/AR_txtActName"
+            android:layout_below="@id/AR_txtActName"
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:text="The description of the Activity whicj might be as much as several lines long and so we must be careful to design something that looks the part" />
+
+        <TextView
+            android:id="@+id/AR_completeMsg"
+            style="@style/Title2TextStyleGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/AR_txtPriority"
+            android:layout_below="@+id/AR_txtActDesc"
+            android:padding="5dp"
+            android:text="Task completed"
+            android:textStyle="bold" />
+        <RelativeLayout
+                android:id="@+id/AR_traineeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginTop="10dp"
+                android:layout_below="@id/AR_completeMsg">
+
+
+            <TextView
+                    android:id="@+id/AR_tRating"
+                    style="@style/Title1TextStyleBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:layout_alignParentRight="true"
+                    android:text="00" />
+            <TextView
+                    android:id="@+id/AR_traineeRatingLabel"
+                    style="@style/TextStyleGrey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/AR_tRating"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:padding="5dp"
+                    android:text="@string/trainee_rating" />
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/AR_insLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AR_traineeLayout">
+
+
+            <TextView
+                    android:id="@+id/AR_instructorRating"
+                    style="@style/Title1TextStyleRed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:text="00"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+            <TextView
+                    android:id="@+id/AR_instructorRatingLabel"
+                    style="@style/TextStyleGrey"
+                    android:layout_width="wrap_content" android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/AR_instructorRating"
+                    android:layout_marginRight="8dp"
+                    android:layout_gravity="center"
+                    android:padding="5dp"
+                    android:text="@string/instructor_rating" />
+            <ImageView
+                    android:id="@+id/AR_imageHelp"
+                    android:src="@drawable/ic_action_help"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+            </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/AR_completionDate"
+            style="@style/TextStyleGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/AR_completeMsg"
+            android:layout_alignBottom="@+id/AR_completeMsg"
+            android:layout_alignParentRight="true"
+            android:text="Saturday, 9 December 2013"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -11,14 +11,14 @@ public class Statics {
 	 * REMOTE URL - bohamaker back end - production
 	 */	
 	//
-	public static final String URL = "https://bohamaker.com/cm/";
-	public static final String IMAGE_URL = "https://bohamaker.com/coursemaker_images/";
+	//public static final String URL = "https://bohamaker.com/cm/";
+	//public static final String IMAGE_URL = "https://bohamaker.com/coursemaker_images/";
 	
 	/*
 	 * LOCAL URL - pecanwood dungeon
 	 */
-	//public static final String URL = "http://192.168.1.111:8050/cm/";
-	//public static final String IMAGE_URL = "http://192.168.1.111:8050/coursemaker_images/";
+	public static final String URL = "http://192.168.1.111:8050/cm/";
+	public static final String IMAGE_URL = "http://192.168.1.111:8050/coursemaker_images/";
 	//
 	/**
 	 * Servlet URL strings

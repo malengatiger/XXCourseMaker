@@ -5,14 +5,25 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.*;
+import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.*;
+import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import com.boha.cmauthor.CourseOverviewPagerActivity;
 import com.boha.cmauthor.R;
 import com.boha.cmauthor.adapter.CategoryAdapter;
@@ -165,6 +176,8 @@ public class CategoryListFragment extends AbstractBuilder {
 	public void setFields() {
 		TextView auth = (TextView) view.findViewById(R.id.CAT_author);
 		txtHdrLabel = (TextView) view.findViewById(R.id.LH_label);
+        txtCompany = (TextView) view.findViewById(R.id.CAT_company);
+        txtCompany.setText(SharedUtil.getCompany(ctx).getCompanyName());
 		author = SharedUtil.getAuthor(ctx);
 		auth.setText(author.getFirstName() + " " + author.getLastName());
 		Statics.setRobotoFontRegular(ctx, auth);
@@ -192,7 +205,14 @@ public class CategoryListFragment extends AbstractBuilder {
 			}
 		});
 		btnCancel = (Button) view.findViewById(R.id.CAT_btnCancel);
+        btnImport = (Button) view.findViewById(R.id.CRS_btnImport);
 		btnSave = (Button) view.findViewById(R.id.CAT_btnSave);
+        btnImport.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                categoryListener.onImportRequested();
+            }
+        });
 		btnSave.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -280,7 +300,8 @@ public class CategoryListFragment extends AbstractBuilder {
 
 	CategoryAdapter adapter;
 	int type;
-	TextView txtHdrLabel;
+	TextView txtHdrLabel, txtCompany;
+    Button btnImport;
 
 
 	@Override

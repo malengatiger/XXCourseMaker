@@ -137,6 +137,10 @@ public class CourseActivity  extends FragmentActivity implements CourseListener 
 	@Override
 	public void onCoursePicked(TrainingClassCourseDTO course) {
 		Log.w(LOG, "####################### Course selected. " + course.getCourseName());
+        if (course.getNumberOfActivities() == 0) {
+            ToastUtil.toast(ctx, ctx.getResources().getString(R.string.course_noact));
+            return;
+        }
 		Intent i = new Intent(ctx, ActivityListActivity.class);
 		i.putExtra("course", course);
 		i.putExtra("trainee", trainee);

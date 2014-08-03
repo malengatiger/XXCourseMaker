@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/grey"
-    android:padding="3dp" >
+    android:padding="0dp" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             style="@style/TextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/CRSITEM_name"
+            android:layout_alignLeft="@id/CRSITEM_name"
             android:layout_below="@+id/CRSITEM_name"
             android:padding="5dp"
             android:text="Activity description here and there"
@@ -45,7 +45,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/CRSITEM_desc"
+            android:layout_alignLeft="@id/CRSITEM_name"
             android:gravity="center"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:padding="10dp" >
 

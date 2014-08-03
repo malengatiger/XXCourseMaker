@@ -12,15 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:orientation="horizontal"
-        android:padding="10dp" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:src="@drawable/ball_48"
-            android:visibility="gone" />
+        android:orientation="vertical"
+        android:padding="5dp" >
 
         <TextView
             android:id="@+id/CAT_author"
@@ -29,6 +22,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center" android:textSize="20sp"
             android:text="Author Full Name"
+            android:textColor="@color/white" />
+        <TextView
+            android:id="@+id/CAT_company"
+            style="@style/TextStyleGrey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="14sp"
+            android:text="Company Name"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -41,7 +43,7 @@
         android:orientation="vertical"
         android:padding="10dp" >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -50,17 +52,24 @@
             <TextView
                 android:id="@+id/CRS_label2"
                 style="@style/TextStyle"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:padding="5dp"
                 android:text="@string/add_category"
                 android:textStyle="bold" />
-        </LinearLayout>
+            <Button
+                android:id="@+id/CRS_btnImport"
+                android:text="@string/import_category"
+                android:layout_width="match_parent"
+                android:layout_below="@id/CRS_label2"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
 
         <EditText
             android:id="@+id/CAT_categoryName"
-            android:layout_width="match_parent"
+            android:layout_width="match_parent" android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:hint="@string/enter_category_label"
             android:imeOptions="actionDone"
@@ -109,7 +118,7 @@
         android:layout_below="@id/LH_space"
         android:background="@drawable/xwhite_rounded_corners"
         android:orientation="horizontal"
-        android:padding="5dp" >
+        android:padding="10dp" >
 
         <TextView
             android:id="@+id/LH_label"
@@ -129,9 +138,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
+            android:layout_marginRight="10dp"
             android:text="00" android:gravity="center"
-            android:textSize="12sp" />
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <ListView

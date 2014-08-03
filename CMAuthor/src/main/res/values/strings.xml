@@ -14,7 +14,9 @@
     <string name="add_save">Add New and Save</string>
     <string name="exit">Exit</string>
     <string name="save">Save Data</string>
-    <string name="add_course">Add Course</string>
+    <string name="add_course">Add Training Unit</string>
+    <string name="import_course">Import Training Units</string>
+    <string name="import_category">Import Category</string>
     <string name="sequence">Sequence Number</string>
     <string name="add_lesson">Add Task/Lesson</string>
     <string name="add_activity">Add Activity</string>
@@ -75,5 +77,6 @@
     <string name="title_activity_lessons_stuff">CMAuthor</string>
     <string name="title_activity_lesson_help">LessonHelpActivity</string>
     <string name="title_activity_notification">NotificationActivity</string>
+    <string name="title_activity_import">Import Training Units</string>
 
 </resources>

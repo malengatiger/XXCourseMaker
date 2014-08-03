@@ -1,7 +1,5 @@
 package com.boha.cmauthor.adapter;
 
-import java.util.List;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +12,10 @@ import android.widget.TextView;
 import com.boha.cmauthor.R;
 import com.boha.cmauthor.misc.RowColor;
 import com.boha.coursemaker.dto.CategoryDTO;
+import com.boha.coursemaker.dto.CourseDTO;
 import com.boha.coursemaker.util.Statics;
+
+import java.util.List;
 
 public class CategoryAdapter extends ArrayAdapter<CategoryDTO> {
 
@@ -47,16 +48,24 @@ public class CategoryAdapter extends ArrayAdapter<CategoryDTO> {
 				.findViewById(R.id.CATITEM_categoryName);
 		TextView cnt = (TextView) view
 				.findViewById(R.id.CATITEM_count);
+        TextView cntx = (TextView) view
+                .findViewById(R.id.CATITEM_countx);
 		final CategoryDTO p = mList.get(position);
 		cat.setText(p.getCategoryName());
+        int count = 0;
 		if (p.getCourseList() != null) {
 			if (p.getCourseList().size() < 10) {
 				cnt.setText("0" + p.getCourseList().size());
 			} else {
 				cnt.setText("" + p.getCourseList().size());
 			}
+            for (CourseDTO d: p.getCourseList() ) {
+                count += d.getActivityList().size();
+            }
+            cntx.setText("" + count);
 		} else {
 			cnt.setText("00");
+            cntx.setText("00");
 		}
 		Statics.setRobotoFontRegular(ctx, cat);
 		

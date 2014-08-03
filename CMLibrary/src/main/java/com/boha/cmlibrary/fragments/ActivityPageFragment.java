@@ -176,14 +176,17 @@ public class ActivityPageFragment extends Fragment implements PageInterface {
         int i = 0;
         for (CourseTraineeActivityDTO dto : trainingClassCourse.getCourseTraineeActivityList()) {
             if (dto.getCourseTraineeActivityID() == cta.getCourseTraineeActivityID()) {
-                trainingClassCourse.getCourseTraineeActivityList().remove(i);
+
+                dto.setCompletedFlag(cta.getCompletedFlag());
+                dto.setRating(cta.getRating());
                 Log.d(LOG, "onActivityResult - CourseTraineeActivity matched and removed from list, index: " + i);
                 break;
             }
             i++;
         }
-        trainingClassCourse.getCourseTraineeActivityList().add(i, cta);
-        adapter.notifyDataSetChanged();
+
+        //adapter.notifyDataSetChanged();
+        setList();
         upDateTotals();
         listView.setSelection(i);
         if (cta.getCompletedFlag() > 0) {

@@ -68,6 +68,33 @@ public class ResponseDTO implements Serializable, CourseMakerData,
     
     private DemoAnnouncementDTO demoAnnouncement;
     private List<DemoAnnouncementDTO> demoAnnouncementList;
+    private List<SkillDTO> skillList;
+    private List<SkillLevelDTO> skillLevelList;
+    private List<TraineeSkillDTO> traineeSkillList;
+
+    public List<SkillDTO> getSkillList() {
+        return skillList;
+    }
+
+    public void setSkillList(List<SkillDTO> skillList) {
+        this.skillList = skillList;
+    }
+
+    public List<SkillLevelDTO> getSkillLevelList() {
+        return skillLevelList;
+    }
+
+    public void setSkillLevelList(List<SkillLevelDTO> skillLevelList) {
+        this.skillLevelList = skillLevelList;
+    }
+
+    public List<TraineeSkillDTO> getTraineeSkillList() {
+        return traineeSkillList;
+    }
+
+    public void setTraineeSkillList(List<TraineeSkillDTO> traineeSkillList) {
+        this.traineeSkillList = traineeSkillList;
+    }
 
     public List<ErrorStoreAndroidDTO> getErrorStoreAndroidList() {
         return errorStoreAndroidList;

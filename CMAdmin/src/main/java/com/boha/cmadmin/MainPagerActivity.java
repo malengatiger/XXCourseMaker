@@ -72,7 +72,6 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
                 buildPages();
             }
         }
-        getCompanyDataFromServer();
     }
 
     @Override
@@ -102,11 +101,13 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
             CacheUtil.getCachedData(ctx, CacheUtil.CACHE_COMPANY_DATA, new CacheUtil.CacheUtilListener() {
                 @Override
                 public void onFileDataDeserialized(ResponseDTO r) {
-                    if (response != null) {
+                    Log.d(LOG,"------ onFileDataDeserialized");
+                    if (r != null) {
                         response = r;
                         buildPages();
+                    } else {
+                        getCompanyDataFromServer();
                     }
-                    getCompanyDataFromServer();
                 }
 
                 @Override
@@ -157,7 +158,7 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
 
                             @Override
                             public void onDataCached() {
-
+                                Log.d(LOG,"----- onDataCached");
                             }
                         });
                     }
@@ -166,25 +167,6 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
 
     ResponseDTO response;
     int currentPageIndex = 0;
-
-    public void initializePager() {
-        mPager.setAdapter(mAdapter);
-        mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageSelected(int arg0) {
-                currentPageIndex = arg0;
-            }
-
-            @Override
-            public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int arg0) {
-            }
-        });
-    }
 
     private void buildPages() {
         Bundle data = new Bundle();
@@ -217,7 +199,22 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
                 pageList.add(adminListFragment);
             }
         }
-        initializePager();
+        mPager.setAdapter(mAdapter);
+        mPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageSelected(int arg0) {
+                currentPageIndex = arg0;
+            }
+
+            @Override
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int arg0) {
+            }
+        });
 
     }
 

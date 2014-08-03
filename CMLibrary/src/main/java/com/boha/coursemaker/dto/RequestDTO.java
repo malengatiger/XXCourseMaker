@@ -175,6 +175,12 @@ public class RequestDTO implements CourseMakerData {
 	public static final int ADD_HELPTYPE = 1008;
 	public static final int UPDATE_HELPTYPE = 1009;
 	public static final int DELETE_HELPTYPE = 1010;
+
+
+    public static final int GET_SKILLS_LOOKUP = 1100;
+    public static final int ADD_TRAINEE_SKILLS = 1101;
+    public static final int GET_TRAINEE_SKILLS = 1102;
+    public static final int GET_TRAINING_CLASS_SKILLS = 1103;
 	//
 	private long dateFrom, dateTo;
 	private int requestType;

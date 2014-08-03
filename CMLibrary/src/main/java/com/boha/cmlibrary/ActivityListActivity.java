@@ -16,7 +16,7 @@ public class ActivityListActivity extends FragmentActivity implements ActivityLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activity_list);
+        setContentView(R.layout.activity_a_list);
 
         activityPageFragment = (ActivityPageFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.fragment);
@@ -98,7 +98,8 @@ public class ActivityListActivity extends FragmentActivity implements ActivityLi
         Log.e(LOG,"################ onActivityResult requestCode: " + requestCode + " resultCode: " + resultCode);
         if (requestCode == REQUEST_RATING) {
             if (resultCode == RESULT_OK) {
-                CourseTraineeActivityDTO cta = (CourseTraineeActivityDTO)data.getSerializableExtra("courseTraineeActivity");
+                CourseTraineeActivityDTO cta = (CourseTraineeActivityDTO)
+                        data.getSerializableExtra("courseTraineeActivity");
                 activityPageFragment.refresh(cta);
             }
         }

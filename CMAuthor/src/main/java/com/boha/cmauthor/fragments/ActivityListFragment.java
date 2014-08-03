@@ -14,7 +14,6 @@ import android.widget.*;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemLongClickListener;
 import com.android.volley.VolleyError;
-import com.boha.cmauthor.CMApplication;
 import com.boha.cmauthor.R;
 import com.boha.cmauthor.adapter.ActivityAdapter;
 import com.boha.cmauthor.interfaces.ActivityListener;
@@ -415,7 +414,6 @@ public class ActivityListFragment extends AbstractBuilder implements
 		for (ActivityDTO a : activityList) {
 			ActivityDTO x = new ActivityDTO();
 			x.setActivityID(a.getActivityID());
-			//x.setLessonID(lesson.getLessonID());
 			x.setActivityName(null);
 			x.setDescription(null);
 			x.setPriorityFlag(Integer.valueOf(index + 1));
@@ -423,9 +421,7 @@ public class ActivityListFragment extends AbstractBuilder implements
 			index++;
 		}
 		isPriorityChangeAnimation = true;
-		CMApplication app = (CMApplication) ctx.getApplicationContext();
-		app.setActivitiesShuffled(true);
-		app.setActivityList(activityList);
+
 	}
 
 

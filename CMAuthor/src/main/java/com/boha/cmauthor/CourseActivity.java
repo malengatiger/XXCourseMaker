@@ -181,6 +181,12 @@ public class CourseActivity extends FragmentActivity implements CourseListener,
     }
 
     @Override
+    public void onImportRequested() {
+        Intent x = new Intent(this, ImportActivity.class);
+        startActivity(x);
+    }
+
+    @Override
     public void setBusy() {
         setRefreshActionButtonState(true);
 

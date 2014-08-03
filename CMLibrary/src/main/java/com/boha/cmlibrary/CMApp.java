@@ -40,7 +40,6 @@ public class CMApp extends Application{
 
     }
     public void initializeVolley(Context context) {
-        Log.e(LOG, "initializing Volley Networking ...");
         requestQueue = Volley.newRequestQueue(context);
         int memClass = ((ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE))
                 .getMemoryClass();
@@ -49,7 +48,6 @@ public class CMApp extends Application{
         int cacheSize = 1024 * 1024 * memClass / 8;
         bitmapLruCache = new BitmapLruCache(cacheSize);
         imageLoader = new ImageLoader(requestQueue, bitmapLruCache);
-        Log.i(LOG, "********** Yebo! Volley Networking has been initialized, cache size: " + (cacheSize / 1024) + " KB");
 
         // Create global configuration and initialize ImageLoader with this configuration
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()

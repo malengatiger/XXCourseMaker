@@ -58,13 +58,15 @@ public class CategoryActivity extends FragmentActivity implements
 		}
 	}
 
-	private void getCategoryList(boolean refresh) {
+	private void getCategoryList() {
         CacheUtil.getCachedData(ctx,CacheUtil.CACHE_CATEGORIES, new CacheUtil.CacheUtilListener() {
             @Override
             public void onFileDataDeserialized(ResponseDTO r) {
                 if (r != null) {
                     response = r;
                     categoryListFragment.setResponse(response);
+                } else {
+                    getCategoryListFromServer();
                 }
             }
 
@@ -73,52 +75,53 @@ public class CategoryActivity extends FragmentActivity implements
 
             }
         });
-        //TODO - check if request refresh needed
-        if (refresh) {
-            RequestDTO request = new RequestDTO();
-            request.setRequestType(RequestDTO.GET_CATEGORY_LIST_BY_COMPANY);
-            request.setCompanyID(SharedUtil.getCompany(ctx).getCompanyID());
-            request.setAuthorID(SharedUtil.getAuthor(ctx).getAuthorID());
-            request.setZippedResponse(true);
-            setRefreshActionButtonState(true);
-            BaseVolley.getRemoteData(Statics.SERVLET_AUTHOR, request, ctx,
-                    new BaseVolley.BohaVolleyListener() {
 
-                        @Override
-                        public void onVolleyError(VolleyError error) {
-                            ToastUtil.errorToast(
-                                    ctx,
-                                    ctx.getResources().getString(
-                                            R.string.error_server_comms));
-                            setRefreshActionButtonState(false);
-                        }
-
-                        @Override
-                        public void onResponseReceived(ResponseDTO r) {
-                            setRefreshActionButtonState(false);
-                            response = r;
-                            if (response.getStatusCode() > 0) {
-                                ToastUtil.errorToast(ctx, r.getMessage());
-                                return;
-                            }
-                            categoryListFragment.setResponse(response);
-                            CacheUtil.cacheData(ctx, response, CacheUtil.CACHE_CATEGORIES, new CacheUtil.CacheUtilListener() {
-                                @Override
-                                public void onFileDataDeserialized(ResponseDTO response) {
-
-                                }
-
-                                @Override
-                                public void onDataCached() {
-
-                                }
-                            });
-
-                        }
-                    });
-        }
 	}
 
+    private void getCategoryListFromServer() {
+        RequestDTO request = new RequestDTO();
+        request.setRequestType(RequestDTO.GET_CATEGORY_LIST_BY_COMPANY);
+        request.setCompanyID(SharedUtil.getCompany(ctx).getCompanyID());
+        request.setAuthorID(SharedUtil.getAuthor(ctx).getAuthorID());
+        request.setZippedResponse(true);
+        setRefreshActionButtonState(true);
+        BaseVolley.getRemoteData(Statics.SERVLET_AUTHOR, request, ctx,
+                new BaseVolley.BohaVolleyListener() {
+
+                    @Override
+                    public void onVolleyError(VolleyError error) {
+                        ToastUtil.errorToast(
+                                ctx,
+                                ctx.getResources().getString(
+                                        R.string.error_server_comms));
+                        setRefreshActionButtonState(false);
+                    }
+
+                    @Override
+                    public void onResponseReceived(ResponseDTO r) {
+                        setRefreshActionButtonState(false);
+                        response = r;
+                        if (response.getStatusCode() > 0) {
+                            ToastUtil.errorToast(ctx, r.getMessage());
+                            return;
+                        }
+                        categoryListFragment.setResponse(response);
+                        CacheUtil.cacheData(ctx, response, CacheUtil.CACHE_CATEGORIES, new CacheUtil.CacheUtilListener() {
+                            @Override
+                            public void onFileDataDeserialized(ResponseDTO response) {
+
+                            }
+
+                            @Override
+                            public void onDataCached() {
+
+                            }
+                        });
+
+                    }
+                });
+
+    }
 	public void setRefreshActionButtonState(final boolean refreshing) {
 		if (mMenu != null) {
 			final MenuItem refreshItem = mMenu
@@ -142,7 +145,7 @@ public class CategoryActivity extends FragmentActivity implements
 			mi.setVisible(false);
 		}
 		if (response == null) {
-			getCategoryList(true);
+			getCategoryList();
 		}
 		return true;
 	}
@@ -162,7 +165,7 @@ public class CategoryActivity extends FragmentActivity implements
 			onBackPressed();
 			return true;
 		case R.id.menu_refresh:
-			getCategoryList(true);
+			getCategoryListFromServer();
 			return true;
 		case R.id.action_profile:
 			Intent i = new Intent(this, ProfileActivity.class);
@@ -203,7 +206,14 @@ public class CategoryActivity extends FragmentActivity implements
 		}
 
 	}
-	@Override
+
+    @Override
+    public void onImportRequested() {
+        Intent x = new Intent(ctx, ImportActivity.class);
+        startActivityForResult(x, IMPORT_CATEGORY);
+    }
+
+    @Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.w(LOG, "onActivityResult ... resultCode: " + resultCode);
 		if (requestCode == START_COURSE_ACTIVITY) {
@@ -215,7 +225,7 @@ public class CategoryActivity extends FragmentActivity implements
 		}
 	}
 
-	static final int START_COURSE_ACTIVITY = 133;
+	static final int START_COURSE_ACTIVITY = 133, IMPORT_CATEGORY = 3375;
 	static final String LOG = "CategoryActivity";
 
 	@Override

@@ -33,6 +33,7 @@ public class CourseAdapter extends ArrayAdapter<TrainingClassCourseDTO> {
 	}
 
 	View view;
+    //TODO - refactor to ViewHolder pattern
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {

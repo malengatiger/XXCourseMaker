@@ -71,6 +71,9 @@ public class ActivityListFragment extends AbstractBuilder implements
         if (b != null) {
             course = (CourseDTO) b.getSerializable("course");
             activityList = course.getActivityList();
+            if (activityList == null || activityList.isEmpty()) {
+                openAddLayout();
+            }
         }
         setList();
 		return view;
@@ -234,7 +237,7 @@ public class ActivityListFragment extends AbstractBuilder implements
 
 	@Override
 	public void setList() {
-		closeAddLayout();
+		//closeAddLayout();
 		if (activityList == null || activityList.size() == 0) {
 			openAddLayout();
 			return;

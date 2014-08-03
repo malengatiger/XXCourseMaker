@@ -66,7 +66,9 @@ public class ResourceListFragment extends AbstractBuilder {
         if (b != null) {
             course = (CourseDTO) b.getSerializable("course");
             lessonResourceList = course.getLessonResourceList();
-
+            if (lessonResourceList == null || lessonResourceList.isEmpty() ) {
+                addLink();
+            }
             setList();
         }
 
@@ -205,7 +207,7 @@ public class ResourceListFragment extends AbstractBuilder {
 
 	@Override
 	public void setList() {
-		closeAddLayout();
+		//closeAddLayout();
 
 		if (lessonResourceList == null
 				|| lessonResourceList.size() == 0) {

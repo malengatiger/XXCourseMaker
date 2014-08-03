@@ -39,8 +39,9 @@ public class CategoryActivity extends FragmentActivity implements
 		setContentView(R.layout.activity_category_course);
 		ctx = getApplicationContext();
 		mainLayout = findViewById(R.id.mainLayout);
-
+        setTitle(ctx.getResources().getString(R.string.author));
         CompanyDTO c = SharedUtil.getCompany(ctx);
+        getActionBar().setSubtitle(c.getCompanyName());
         ACRA.getErrorReporter().putCustomData("companyID", "" + c.getCompanyID());
         ACRA.getErrorReporter().putCustomData("companyName", c.getCompanyName());
 

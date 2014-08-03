@@ -245,7 +245,9 @@ public class ActivitiesAndLinksPager extends FragmentActivity implements
         resourceListFragment.setArguments(b1);
 
         pageList.add(activityListFragment);
-        pageList.add(resourceListFragment);
+         pageList.add(resourceListFragment);
+
+
         numberOfPages = pageList.size();
 
     }

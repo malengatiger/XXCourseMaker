@@ -85,6 +85,7 @@ public class CategoryListFragment extends AbstractBuilder {
 		return view;
 	}
 
+
 	Gson g = new Gson();
 
 	public void onResume() {

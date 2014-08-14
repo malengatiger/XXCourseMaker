@@ -173,7 +173,7 @@ public class TraineeListFragment extends Fragment implements PageInterface,
 		@Override
 		protected void onPostExecute(Integer res) {
 
-			if (res.intValue() > 0) {
+			if (res > 0) {
 				Log.e(LOG, "Problem getting file from bitmap");
 				return;
 			}
@@ -198,8 +198,8 @@ public class TraineeListFragment extends Fragment implements PageInterface,
 											+ trainee.getTraineeID());
 							int i = 0;
 							for (TraineeDTO t : traineeList) {
-								if (t.getTraineeID().intValue() == trainee
-										.getTraineeID().intValue()) {
+								if (t.getTraineeID() == trainee
+										.getTraineeID()) {
 									break;
 								}
 								i++;

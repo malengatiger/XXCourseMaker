@@ -45,7 +45,7 @@ public class AsyncImageUtil {
 		}
 		@Override
 		protected void onPostExecute(Integer res) {
-			if (res.intValue() > 0) {
+			if (res > 0) {
 				listener.onError();
 				return;
 			}

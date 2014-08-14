@@ -19,18 +19,18 @@ import java.io.Serializable;
 public class InstitutionDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
-	private Integer institutionID;
+	private int institutionID;
    
     private String institutionName;
     private CityDTO city;
     
    
 
-    public Integer getInstitutionID() {
+    public int getInstitutionID() {
         return institutionID;
     }
 
-    public void setInstitutionID(Integer institutionID) {
+    public void setInstitutionID(int institutionID) {
         this.institutionID = institutionID;
     }
 

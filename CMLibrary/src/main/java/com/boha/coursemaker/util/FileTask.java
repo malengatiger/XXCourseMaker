@@ -44,7 +44,7 @@ public class FileTask {
 		}
 		@Override
 		protected void onPostExecute(Integer res) {
-			if (res.intValue() > 0) {
+			if (res > 0) {
 				fileListener.onError();
 				return;
 			}

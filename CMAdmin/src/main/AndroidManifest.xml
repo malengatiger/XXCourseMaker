@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
     package="com.boha.cmadmin"
     android:versionCode="1"
-    android:versionName="1.0"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -29,10 +29,9 @@
         android:name="com.boha.cmlibrary.CMApp"
         android:allowBackup="true"
         android:icon="@drawable/ball"
-
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Holo.Light" tools:replace="android:icon">
-
+        android:theme="@android:style/Theme.Holo.Light"
+         >
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -41,7 +40,7 @@
             android:value="id=624485365788" />
 
         <activity
-            android:name="com.boha.cmadmin.RegistrationActivity"
+            android:name=".RegistrationActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" >
@@ -52,13 +51,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.boha.cmadmin.MoreInfoActivity"
+            android:name=".MoreInfoActivity"
             android:label="@string/title_activity_more_info"
             android:windowSoftInputMode="stateHidden" >
         </activity>
 
         <receiver
-            android:name="com.boha.cmadmin.GcmBroadcastReceiver"
+            android:name=".GcmBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND" >
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
@@ -67,7 +66,7 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.boha.cmadmin.GcmIntentService" />
+        <service android:name=".GcmIntentService" />
 
         <activity
             android:name=".MainPagerActivity"
@@ -82,25 +81,25 @@
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name="com.boha.cmadmin.NotificationActivity"
+            android:name=".NotificationActivity"
             android:label="@string/title_activity_notification"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name="com.boha.cmadmin.TraineeEquipmentActivity"
+            android:name=".TraineeEquipmentActivity"
             android:label="@string/administrator"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name="com.boha.cmadmin.InstructorClassActivity"
+            android:name=".InstructorClassActivity"
             android:label="@string/title_activity_instructor_class"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name="com.boha.cmadmin.LookupActivity"
+            android:name=".LookupActivity"
             android:label="@string/title_activity_lookup"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" >
@@ -112,10 +111,16 @@
             android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
-            android:name="com.boha.cmadmin.ClassTraineeListActivity"
+            android:name=".ClassTraineeListActivity"
             android:label="@string/title_activity_class_trainee_list"
             android:screenOrientation="portrait" >
         </activity>
     </application>
+
+    <permission
+        android:name="com.example.gcm.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
 
 </manifest>

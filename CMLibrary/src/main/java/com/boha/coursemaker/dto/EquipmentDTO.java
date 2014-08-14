@@ -21,19 +21,19 @@ public class EquipmentDTO  implements Serializable,CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
 
-	private Integer equipmentID;
+	private int equipmentID;
    
     private String equipmentName;
     
-    private Integer companyID;
+    private int companyID;
     
     private List<InventoryDTO> inventoryList;
 
-    public Integer getEquipmentID() {
+    public int getEquipmentID() {
         return equipmentID;
     }
 
-    public void setEquipmentID(Integer equipmentID) {
+    public void setEquipmentID(int equipmentID) {
         this.equipmentID = equipmentID;
     }
 
@@ -55,11 +55,11 @@ public class EquipmentDTO  implements Serializable,CourseMakerData {
 		this.inventoryList = inventoryList;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 }

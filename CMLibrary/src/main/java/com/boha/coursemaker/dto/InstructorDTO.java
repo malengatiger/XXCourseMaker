@@ -19,15 +19,15 @@ import java.util.List;
 public class InstructorDTO  implements Serializable, CourseMakerData, Comparable<InstructorDTO> {
 	   
 		private static final long serialVersionUID = 1L;
-	private Integer instructorID;
+	private int instructorID;
     private String firstName;    
     private String lastName;
     private String email;
     private String cellphone, password;
     private long dateRegistered;
-    private Integer activeFlag;
+    private int activeFlag;
     private String cityName, companyName;
-    private Integer cityID, companyID;
+    private int cityID, companyID;
     private List<GcmDeviceDTO> gcmDeviceList;
     private List<InstructorClassDTO> instructorClassList;
     private List<HelpResponseDTO> helpResponseList;
@@ -38,11 +38,11 @@ public class InstructorDTO  implements Serializable, CourseMakerData, Comparable
 		String anotherName = arg0.lastName + arg0.firstName;
 		return thisName.compareTo(anotherName);
 	}
-    public Integer getInstructorID() {
+    public int getInstructorID() {
         return instructorID;
     }
 
-    public void setInstructorID(Integer instructorID) {
+    public void setInstructorID(int instructorID) {
         this.instructorID = instructorID;
     }
 
@@ -86,11 +86,11 @@ public class InstructorDTO  implements Serializable, CourseMakerData, Comparable
         this.dateRegistered = dateRegistered;
     }
 
-    public Integer getCityID() {
+    public int getCityID() {
         return cityID;
     }
 
-    public void setCityID(Integer cityID) {
+    public void setCityID(int cityID) {
         this.cityID = cityID;
     }
 
@@ -103,11 +103,11 @@ public class InstructorDTO  implements Serializable, CourseMakerData, Comparable
 		this.password = password;
 	}
 
-	public Integer getActiveFlag() {
+	public int getActiveFlag() {
 		return activeFlag;
 	}
 
-	public void setActiveFlag(Integer activeFlag) {
+	public void setActiveFlag(int activeFlag) {
 		this.activeFlag = activeFlag;
 	}
 
@@ -127,11 +127,11 @@ public class InstructorDTO  implements Serializable, CourseMakerData, Comparable
 		this.companyName = companyName;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 

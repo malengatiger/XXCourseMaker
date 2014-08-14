@@ -39,7 +39,7 @@ public class AsyncMailSender {
 		}
 		@Override
 		protected void onPostExecute(Integer res) {
-			if (res.intValue() == 0) {
+			if (res == 0) {
 				Log.i(LOG, "email has been sent to " + mRecipients);
 				mListener.onMailSent();
 			} else {

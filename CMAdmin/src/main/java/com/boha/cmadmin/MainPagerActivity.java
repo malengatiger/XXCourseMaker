@@ -195,7 +195,7 @@ public class MainPagerActivity extends FragmentActivity implements BusyListener,
         pageList.add(authorListFragment);
         pageList.add(equipmentListFragment);
         if (administrator != null) {
-            if (administrator.getSuperUserFlag() != null) {
+            if (administrator.getSuperUserFlag() != 0) {
                 pageList.add(adminListFragment);
             }
         }

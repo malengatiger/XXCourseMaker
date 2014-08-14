@@ -9,20 +9,27 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import com.android.volley.VolleyError;
+
 import com.boha.cmauthor.fragments.CategoryListFragment;
 import com.boha.cmauthor.fragments.CourseListFragment;
 import com.boha.cmauthor.interfaces.CategoryListener;
 import com.boha.cmauthor.interfaces.CourseListener;
+import com.boha.cmlibrary.CMApp;
 import com.boha.cmlibrary.ProfileActivity;
 import com.boha.cmlibrary.fragments.ProfileFragment;
 import com.boha.coursemaker.base.BaseVolley;
-import com.boha.coursemaker.dto.*;
+import com.boha.coursemaker.dto.CategoryDTO;
+import com.boha.coursemaker.dto.CompanyDTO;
+import com.boha.coursemaker.dto.CourseDTO;
+import com.boha.coursemaker.dto.RequestDTO;
+import com.boha.coursemaker.dto.ResponseDTO;
 import com.boha.coursemaker.listeners.BusyListener;
 import com.boha.coursemaker.util.CacheUtil;
 import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
+import com.boha.coursemaker.util.WebSocketUtil;
+
 import org.acra.ACRA;
 
 /**
@@ -57,8 +64,12 @@ public class CategoryActivity extends FragmentActivity implements
 				categoryListFragment.setResponse(response);
 			}
 		}
+        CMApp app = (CMApp)getApplication();
+
+
 	}
 
+    String mSessionID;
 	private void getCategoryList() {
         CacheUtil.getCachedData(ctx,CacheUtil.CACHE_CATEGORIES, new CacheUtil.CacheUtilListener() {
             @Override
@@ -85,42 +96,97 @@ public class CategoryActivity extends FragmentActivity implements
         request.setCompanyID(SharedUtil.getCompany(ctx).getCompanyID());
         request.setAuthorID(SharedUtil.getAuthor(ctx).getAuthorID());
         request.setZippedResponse(true);
-        setRefreshActionButtonState(true);
-        BaseVolley.getRemoteData(Statics.SERVLET_AUTHOR, request, ctx,
-                new BaseVolley.BohaVolleyListener() {
 
+        if (!BaseVolley.checkNetworkOnDevice(ctx)) {
+            return;
+        }
+        setRefreshActionButtonState(true);
+
+        WebSocketUtil.sendRequest(ctx,Statics.AUTHOR_ENDPOINT,request,new WebSocketUtil.WebSocketListener() {
+            @Override
+            public void onMessage(ResponseDTO r) {
+
+                response = r;
+
+                CacheUtil.cacheData(ctx, response, CacheUtil.CACHE_CATEGORIES, new CacheUtil.CacheUtilListener() {
                     @Override
-                    public void onVolleyError(VolleyError error) {
-                        ToastUtil.errorToast(
-                                ctx,
-                                ctx.getResources().getString(
-                                        R.string.error_server_comms));
-                        setRefreshActionButtonState(false);
+                    public void onFileDataDeserialized(ResponseDTO response) {
+
                     }
 
                     @Override
-                    public void onResponseReceived(ResponseDTO r) {
-                        setRefreshActionButtonState(false);
-                        response = r;
-                        if (response.getStatusCode() > 0) {
-                            ToastUtil.errorToast(ctx, r.getMessage());
-                            return;
-                        }
-                        categoryListFragment.setResponse(response);
-                        CacheUtil.cacheData(ctx, response, CacheUtil.CACHE_CATEGORIES, new CacheUtil.CacheUtilListener() {
-                            @Override
-                            public void onFileDataDeserialized(ResponseDTO response) {
-
-                            }
-
-                            @Override
-                            public void onDataCached() {
-
-                            }
-                        });
+                    public void onDataCached() {
 
                     }
                 });
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        setRefreshActionButtonState(false);
+                        categoryListFragment.setResponse(response);
+                    }
+                });
+            }
+
+            @Override
+            public void onClose() {
+
+            }
+
+            @Override
+            public void onError(final String message) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        setRefreshActionButtonState(false);
+                        ToastUtil.errorToast(ctx,message);
+                    }
+                });
+
+            }
+
+            @Override
+            public void onSessionIDreceived(String sessionID) {
+                mSessionID = sessionID;
+            }
+        });
+
+
+//        BaseVolley.getRemoteData(Statics.SERVLET_AUTHOR, request, ctx,
+//                new BaseVolley.BohaVolleyListener() {
+//
+//                    @Override
+//                    public void onVolleyError(VolleyError error) {
+//                        ToastUtil.errorToast(
+//                                ctx,
+//                                ctx.getResources().getString(
+//                                        R.string.error_server_comms));
+//                        setRefreshActionButtonState(false);
+//                    }
+//
+//                    @Override
+//                    public void onResponseReceived(ResponseDTO r) {
+//                        setRefreshActionButtonState(false);
+//                        response = r;
+//                        if (response.getStatusCode() > 0) {
+//                            ToastUtil.errorToast(ctx, r.getMessage());
+//                            return;
+//                        }
+//                        categoryListFragment.setResponse(response);
+//                        CacheUtil.cacheData(ctx, response, CacheUtil.CACHE_CATEGORIES, new CacheUtil.CacheUtilListener() {
+//                            @Override
+//                            public void onFileDataDeserialized(ResponseDTO response) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onDataCached() {
+//
+//                            }
+//                        });
+//
+//                    }
+//                });
 
     }
 	public void setRefreshActionButtonState(final boolean refreshing) {

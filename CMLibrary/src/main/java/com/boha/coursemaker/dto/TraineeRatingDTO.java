@@ -20,24 +20,24 @@ public class TraineeRatingDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
 
-	private Integer traineeRatingID;
+	private int traineeRatingID;
     
     private long dateUpdated;
     
     private String comment, activityName;
     
-    private Integer traineeID;
+    private int traineeID;
    
     private RatingDTO rating;
     
-    private Integer courseTraineeActivityID;
+    private int courseTraineeActivityID;
     
    
-    public Integer getTraineeRatingID() {
+    public int getTraineeRatingID() {
         return traineeRatingID;
     }
 
-    public void setTraineeRatingID(Integer traineeRatingID) {
+    public void setTraineeRatingID(int traineeRatingID) {
         this.traineeRatingID = traineeRatingID;
     }
 
@@ -65,11 +65,11 @@ public class TraineeRatingDTO  implements Serializable, CourseMakerData {
         this.activityName = activityName;
     }
 
-    public Integer getTraineeID() {
+    public int getTraineeID() {
         return traineeID;
     }
 
-    public void setTraineeID(Integer traineeID) {
+    public void setTraineeID(int traineeID) {
         this.traineeID = traineeID;
     }
 
@@ -81,11 +81,11 @@ public class TraineeRatingDTO  implements Serializable, CourseMakerData {
         this.rating = rating;
     }
 
-    public Integer getCourseTraineeActivityID() {
+    public int getCourseTraineeActivityID() {
         return courseTraineeActivityID;
     }
 
-    public void setCourseTraineeActivityID(Integer courseTraineeActivityID) {
+    public void setCourseTraineeActivityID(int courseTraineeActivityID) {
         this.courseTraineeActivityID = courseTraineeActivityID;
     }
 }

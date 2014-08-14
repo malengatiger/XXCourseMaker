@@ -84,7 +84,7 @@ public class TraineeListFragment extends Fragment implements PageInterface,
 				//remove self
 				TraineeDTO dto = SharedUtil.getTrainee(ctx);
 				for (TraineeDTO t : traineeList) {
-					if (t.getTraineeID().intValue() == dto.getTraineeID().intValue()) {
+					if (t.getTraineeID() == dto.getTraineeID()) {
 						traineeList.remove(t);
 						break;
 					}

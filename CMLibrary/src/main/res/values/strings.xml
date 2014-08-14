@@ -370,6 +370,7 @@
     <string name="tasks_completed">Tasks Completed</string>
     <string name="date_last">Latest Date</string>
     <string name="tasks_total">Total Scheduled Tasks</string>
+    <string name="trainee_total">Trainees Registered</string>
     <string name="tasks_sched">Scheduled Tasks</string>
     <string name="number_activities_completed">Number of Completed Activities</string>
     <string name="number_activities_outstanding">Activities Outstanding</string>

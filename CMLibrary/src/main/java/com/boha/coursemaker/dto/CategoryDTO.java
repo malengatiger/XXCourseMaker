@@ -22,18 +22,18 @@ public class CategoryDTO  implements Serializable, CourseMakerData {
 		private static final long serialVersionUID = 1L;
 
 
-private Integer categoryID;
+private int categoryID;
     
     private String categoryName;
     private List<CourseDTO> courseList;
-    private Integer companyID;
+    private int companyID;
     private Long localID;
     private long syncDate;
-    public Integer getCategoryID() {
+    public int getCategoryID() {
         return categoryID;
     }
 
-    public void setCategoryID(Integer categoryID) {
+    public void setCategoryID(int categoryID) {
         this.categoryID = categoryID;
     }
 
@@ -57,11 +57,11 @@ private Integer categoryID;
 		this.courseList = courseList;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 

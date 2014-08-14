@@ -5,19 +5,28 @@ import java.io.Serializable;
 public class InstructorClassDTO implements Serializable {
     private static final long serialVersionUID = 1L;
     
-    private Integer instructorClassID;
+    private int instructorClassID;
     private long dateRegistered, startDate, endDate;
     
-    private Integer instructorID;
+    private int instructorID, numberOfTrainees;
     private String trainingClassName;
     private long calendarID;
-    private Integer trainingClassID;
+    private int trainingClassID;
     private int totalTasks, totalComplete;
 	private double percComplete;
-	public Integer getInstructorClassID() {
+
+    public int getNumberOfTrainees() {
+        return numberOfTrainees;
+    }
+
+    public void setNumberOfTrainees(int numberOfTrainees) {
+        this.numberOfTrainees = numberOfTrainees;
+    }
+
+    public int getInstructorClassID() {
 		return instructorClassID;
 	}
-	public void setInstructorClassID(Integer instructorClassID) {
+	public void setInstructorClassID(int instructorClassID) {
 		this.instructorClassID = instructorClassID;
 	}
 	public long getDateRegistered() {
@@ -26,16 +35,16 @@ public class InstructorClassDTO implements Serializable {
 	public void setDateRegistered(long dateRegistered) {
 		this.dateRegistered = dateRegistered;
 	}
-	public Integer getInstructorID() {
+	public int getInstructorID() {
 		return instructorID;
 	}
-	public void setInstructorID(Integer instructorID) {
+	public void setInstructorID(int instructorID) {
 		this.instructorID = instructorID;
 	}
-	public Integer getTrainingClassID() {
+	public int getTrainingClassID() {
 		return trainingClassID;
 	}
-	public void setTrainingClassID(Integer trainingClassID) {
+	public void setTrainingClassID(int trainingClassID) {
 		this.trainingClassID = trainingClassID;
 	}
 	public String getTrainingClassName() {

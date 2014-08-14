@@ -56,7 +56,7 @@ public abstract class AbstractBuilder extends Fragment implements PageInterface 
 	View addLayout;
 	TextView label;
 	// ImageView image;
-	Integer priorityFlag;
+	int priorityFlag;
 
 	public abstract void setFields();
 

@@ -239,8 +239,8 @@ public class InstructorListFragment extends Fragment implements PageInterface,
 	public void refreshInstructor(InstructorDTO ins) {
 		//
 		for (InstructorDTO i : instructorList) {
-			if (ins.getInstructorID().intValue() == i.getInstructorID()
-					.intValue()) {
+			if (ins.getInstructorID() == i.getInstructorID()
+					) {
 				instructorList.remove(i);
 				Log.w(LOG, "instructor removed temporarily ...");
 				break;
@@ -353,7 +353,7 @@ public class InstructorListFragment extends Fragment implements PageInterface,
 		@Override
 		protected void onPostExecute(Integer res) {
 			
-			if (res.intValue() > 0) {
+			if (res > 0) {
 				Log.e(LOG, "Problem getting file from bitmap");
 				return;
 			}
@@ -375,7 +375,7 @@ public class InstructorListFragment extends Fragment implements PageInterface,
 							+ instructor.getLastName() + " id: " + instructor.getInstructorID());
 					int i = 0;
 					for (InstructorDTO t : instructorList) {
-						if (t.getInstructorID().intValue() == instructor.getInstructorID().intValue()) {
+						if (t.getInstructorID() == instructor.getInstructorID()) {
 							break;
 						}
 						i++;

@@ -35,7 +35,10 @@ public class RatingActivity extends FragmentActivity implements RatingListener, 
         ratingFragment.setCourseTraineeActivity(courseTraineeActivity, type);
         bar =(ProgressBar)findViewById(R.id.progressBar);
         setTitle(getResources().getString(R.string.trainee_eval));
+        CMApp app = (CMApp)getApplication();
+
     }
+
 
     @Override
     public void onPause() {
@@ -46,6 +49,15 @@ public class RatingActivity extends FragmentActivity implements RatingListener, 
 
     Menu mMenu;
 
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+    @Override
+    public void onStop() {
+
+        super.onStop();
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //getMenuInflater().inflate(R.menu.rating, menu);

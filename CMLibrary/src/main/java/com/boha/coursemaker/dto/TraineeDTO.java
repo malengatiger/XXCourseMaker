@@ -18,19 +18,19 @@ import java.util.List;
 public class TraineeDTO implements Serializable, CourseMakerData, Comparable<TraineeDTO> {
 
 	private static final long serialVersionUID = 1L;
-	private Integer traineeID;
+	private int traineeID;
 	private String firstName;
 	private String middleName;
 	private String lastName;
 	private String email;
 	private String cellphone, provinceName;
 	private long dateRegistered, dateUpdated;
-	private Integer gender;
+	private int gender;
 	private List<GcmDeviceDTO> gcmDeviceList;
 	private String iDNumber;
 	private String address, password, cityName;
-	private Integer cityID;
-	private Integer companyID, provinceID;
+	private int cityID;
+	private int companyID, provinceID;
 	private int totalTasks, totalCompleted;
 	private double percComplete, averageInstructorRating, averageTraineeRating;
 	public double getAverageInstructorRating() {
@@ -89,19 +89,19 @@ public class TraineeDTO implements Serializable, CourseMakerData, Comparable<Tra
 		this.lastDate = lastDate;
 	}
 
-	private Integer institutionID;
-	private Integer trainingClassID;
+	private int institutionID;
+	private int trainingClassID;
 	private String trainingClassName;
 
 	public String getFullName() {
 		return this.firstName+ " " + this.lastName;
 	}
 
-	public Integer getTraineeID() {
+	public int getTraineeID() {
 		return traineeID;
 	}
 
-	public void setTraineeID(Integer traineeID) {
+	public void setTraineeID(int traineeID) {
 		this.traineeID = traineeID;
 	}
 
@@ -161,11 +161,11 @@ public class TraineeDTO implements Serializable, CourseMakerData, Comparable<Tra
 		this.dateRegistered = dateRegistered;
 	}
 
-	public Integer getGender() {
+	public int getGender() {
 		return gender;
 	}
 
-	public void setGender(Integer gender) {
+	public void setGender(int gender) {
 		this.gender = gender;
 	}
 
@@ -185,35 +185,35 @@ public class TraineeDTO implements Serializable, CourseMakerData, Comparable<Tra
 		this.address = address;
 	}
 
-	public Integer getCityID() {
+	public int getCityID() {
 		return cityID;
 	}
 
-	public void setCityID(Integer cityID) {
+	public void setCityID(int cityID) {
 		this.cityID = cityID;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 
-	public Integer getInstitutionID() {
+	public int getInstitutionID() {
 		return institutionID;
 	}
 
-	public void setInstitutionID(Integer institutionID) {
+	public void setInstitutionID(int institutionID) {
 		this.institutionID = institutionID;
 	}
 
-	public Integer getTrainingClassID() {
+	public int getTrainingClassID() {
 		return trainingClassID;
 	}
 
-	public void setTrainingClassID(Integer trainingClassID) {
+	public void setTrainingClassID(int trainingClassID) {
 		this.trainingClassID = trainingClassID;
 	}
 
@@ -250,11 +250,11 @@ public class TraineeDTO implements Serializable, CourseMakerData, Comparable<Tra
 		this.provinceName = provinceName;
 	}
 
-	public Integer getProvinceID() {
+	public int getProvinceID() {
 		return provinceID;
 	}
 
-	public void setProvinceID(Integer provinceID) {
+	public void setProvinceID(int provinceID) {
 		this.provinceID = provinceID;
 	}
 

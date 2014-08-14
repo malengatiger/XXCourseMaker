@@ -6,7 +6,14 @@ import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import com.boha.coursemaker.dto.*;
+
+import com.boha.coursemaker.dto.AdministratorDTO;
+import com.boha.coursemaker.dto.AuthorDTO;
+import com.boha.coursemaker.dto.CompanyDTO;
+import com.boha.coursemaker.dto.CourseDTO;
+import com.boha.coursemaker.dto.InstructorDTO;
+import com.boha.coursemaker.dto.TraineeDTO;
+import com.boha.coursemaker.dto.TrainingClassDTO;
 import com.google.gson.Gson;
 
 import java.util.Date;
@@ -25,16 +32,35 @@ public class SharedUtil {
 		return null;
 	}
 
-	public static void setLastCourse(Context ctx, CourseDTO course) {
+	public static void setSessionID(Context ctx, String sessionID) {
 		SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(ctx);
-		Gson g = new Gson();
-		String json = g.toJson(course);
+
 		Editor ed = sp.edit();
-		ed.putString(Constants.LAST_COURSE_ID, json);
+		ed.putString(Statics.SESSION_ID, sessionID);
 		ed.commit();
 
+        Log.w("SharedUtil", "#### web socket session id saved: " + sessionID);
+
 	}
+    public static String getSessionID(Context ctx) {
+        SharedPreferences sp = PreferenceManager
+                .getDefaultSharedPreferences(ctx);
+        String j = sp.getString(Statics.SESSION_ID, null);
+
+        return j;
+    }
+
+    public static void setLastCourse(Context ctx, CourseDTO course) {
+        SharedPreferences sp = PreferenceManager
+                .getDefaultSharedPreferences(ctx);
+        Gson g = new Gson();
+        String json = g.toJson(course);
+        Editor ed = sp.edit();
+        ed.putString(Constants.LAST_COURSE_ID, json);
+        ed.commit();
+
+    }
 
 	public static Date getLastCompletionDate(Context ctx) {
 		SharedPreferences sp = PreferenceManager

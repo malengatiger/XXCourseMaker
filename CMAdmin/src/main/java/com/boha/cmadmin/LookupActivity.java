@@ -101,7 +101,7 @@ public class LookupActivity extends Activity {
 		case RATING:
 			editNumber.setVisibility(View.VISIBLE);
 			editName.setText(rating.getRatingName());
-			editNumber.setText("" + rating.getRatingNumber().intValue());
+			editNumber.setText("" + rating.getRatingNumber());
 			break;
 		case HELPTYPE:
 			editNumber.setVisibility(View.GONE);
@@ -123,7 +123,7 @@ public class LookupActivity extends Activity {
 		case RATING:
 			editNumber.setVisibility(View.VISIBLE);
 			editName.setText(rating.getRatingName());
-			editNumber.setText("" + rating.getRatingNumber().intValue());
+			editNumber.setText("" + rating.getRatingNumber());
 			break;
 		case HELPTYPE:
 			editNumber.setVisibility(View.GONE);
@@ -467,7 +467,7 @@ public class LookupActivity extends Activity {
 	private int getRatingIndex(RatingDTO r) {
 		int index = 0;
 		for (RatingDTO rr : response.getRatingList()) {
-			if (rr.getRatingID().intValue() == r.getRatingID().intValue()) {
+			if (rr.getRatingID() == r.getRatingID()) {
 				return index;
 			}
 			index++;
@@ -478,7 +478,7 @@ public class LookupActivity extends Activity {
 	private int getHelpTypeIndex(HelpTypeDTO r) {
 		int index = 0;
 		for (HelpTypeDTO rr : response.getHelpTypeList()) {
-			if (rr.getHelpTypeID().intValue() == r.getHelpTypeID().intValue()) {
+			if (rr.getHelpTypeID() == r.getHelpTypeID()) {
 				return index;
 			}
 			index++;

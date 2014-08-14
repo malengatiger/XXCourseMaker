@@ -117,7 +117,7 @@ public class ClassListFragment extends Fragment implements PageInterface {
 
 	}
 
-	public void updateActivityEnrolment(Integer trainingClassID) {
+	public void updateActivityEnrolment(int trainingClassID) {
 		RequestDTO r = new RequestDTO();
 		r.setRequestType(RequestDTO.ENROLL_IN_COURSE);
 		r.setTrainingClassID(trainingClassID);

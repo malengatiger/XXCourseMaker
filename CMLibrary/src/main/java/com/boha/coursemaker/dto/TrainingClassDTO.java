@@ -18,7 +18,7 @@ public class TrainingClassDTO implements Serializable, CourseMakerData {
 
 	private static final long serialVersionUID = 1L;
 
-	private Integer trainingClassID, isOpen;
+	private int trainingClassID, isOpen;
 	private String trainingClassName;
 	private long calendarID;
 	private long startDate;
@@ -29,14 +29,14 @@ public class TrainingClassDTO implements Serializable, CourseMakerData {
 	private List<TrainingClassCourseDTO> trainingClassCourseList;
 	private List<TraineeDTO> traineeList;
 	private List<TrainingClassEventDTO> trainingClassEventList;
-	private Integer companyID;
+	private int companyID;
 
 
-	public Integer getTrainingClassID() {
+	public int getTrainingClassID() {
 		return trainingClassID;
 	}
 
-	public void setTrainingClassID(Integer trainingClassID) {
+	public void setTrainingClassID(int trainingClassID) {
 		this.trainingClassID = trainingClassID;
 	}
 
@@ -81,19 +81,19 @@ public class TrainingClassDTO implements Serializable, CourseMakerData {
 		this.administrator = administrator;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 
-	public Integer getIsOpen() {
+	public int getIsOpen() {
 		return isOpen;
 	}
 
-	public void setIsOpen(Integer isOpen) {
+	public void setIsOpen(int isOpen) {
 		this.isOpen = isOpen;
 	}
 

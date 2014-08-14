@@ -20,23 +20,23 @@ public class LessonScheduleDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
 
-private Integer lessonScheduleID;
+private int lessonScheduleID;
     
     private long scheduleDate;
     
     private long endDate;
     
-    private Integer lessonID;
+    private int lessonID;
     
-    private Integer trainingClassID;   
+    private int trainingClassID;   
     
   
 
-    public Integer getLessonScheduleID() {
+    public int getLessonScheduleID() {
         return lessonScheduleID;
     }
 
-    public void setLessonScheduleID(Integer lessonScheduleID) {
+    public void setLessonScheduleID(int lessonScheduleID) {
         this.lessonScheduleID = lessonScheduleID;
     }
 
@@ -56,19 +56,19 @@ private Integer lessonScheduleID;
         this.endDate = endDate;
     }
 
-    public Integer getLessonID() {
+    public int getLessonID() {
         return lessonID;
     }
 
-    public void setLessonID(Integer lessonID) {
+    public void setLessonID(int lessonID) {
         this.lessonID = lessonID;
     }
 
-    public Integer getTrainingClassID() {
+    public int getTrainingClassID() {
         return trainingClassID;
     }
 
-    public void setTrainingClassID(Integer trainingClassID) {
+    public void setTrainingClassID(int trainingClassID) {
         this.trainingClassID = trainingClassID;
     }
 }

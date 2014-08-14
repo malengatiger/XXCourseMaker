@@ -32,7 +32,7 @@ public class AssignCoursesToClassActivity extends FragmentActivity implements Co
 		
 	}
 	
-	Integer trainingClassID;
+	int trainingClassID;
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.category, menu);

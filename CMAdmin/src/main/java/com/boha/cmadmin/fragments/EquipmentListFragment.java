@@ -199,7 +199,7 @@ public class EquipmentListFragment extends Fragment implements PageInterface {
 		layoutEquip.startAnimation(a);
 	}
 
-	private int getIndex(Integer id) {
+	private int getIndex(int id) {
 		int index = 0;
 		for (EquipmentDTO e : equipmentList) {
 			if (e.getEquipmentID() == id) {
@@ -309,10 +309,10 @@ public class EquipmentListFragment extends Fragment implements PageInterface {
 
 	}
 
-	public void upgradeEquipment(Integer equipmentID, List<InventoryDTO> list) {
+	public void upgradeEquipment(int equipmentID, List<InventoryDTO> list) {
 		//match this id within list and replace - adapter nudge
 		for (EquipmentDTO e : equipmentList) {
-			if (e.getEquipmentID().intValue() == equipmentID.intValue()) {
+			if (e.getEquipmentID() == equipmentID) {
 				if (e.getInventoryList() == null) {
 					e.setInventoryList(new ArrayList<InventoryDTO>());
 				}

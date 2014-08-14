@@ -59,6 +59,7 @@ public class ClassAdapter extends ArrayAdapter<InstructorClassDTO> {
 		TextView compTot = (TextView) view.findViewById(R.id.AR_totalComplete);
 		TextView end = (TextView) view.findViewById(R.id.AR_endDate);
 		TextView taskTot = (TextView) view.findViewById(R.id.AR_totalTasks);
+        TextView trTot = (TextView) view.findViewById(R.id.AR_totalTrainees);
 		TextView perc = (TextView) view.findViewById(R.id.AR_percComplete);
 
         ImageView imgCal = (ImageView) view.findViewById(R.id.AR_imgCalendar);
@@ -67,7 +68,6 @@ public class ClassAdapter extends ArrayAdapter<InstructorClassDTO> {
 		
 
 		final InstructorClassDTO ic = mList.get(position);
-
         imgCal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,6 +95,7 @@ public class ClassAdapter extends ArrayAdapter<InstructorClassDTO> {
 		taskTot.setText(df1.format( ic.getTotalTasks()));
 		compTot.setText(df1.format( ic.getTotalComplete()));
 		perc.setText(df2.format(ic.getPercComplete()) + " %");
+        trTot.setText(""+ic.getNumberOfTrainees());
 		
 		Statics.setRobotoFontRegular(ctx, className);
 		Statics.setRobotoFontRegular(ctx, start);

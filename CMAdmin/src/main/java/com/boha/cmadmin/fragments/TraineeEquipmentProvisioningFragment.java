@@ -102,10 +102,10 @@ public class TraineeEquipmentProvisioningFragment extends Fragment implements
 
 	private boolean isDeviceAssigned() {
 		for (TraineeEquipmentDTO te : traineeEquipmentList) {
-			if (te.getTrainee().getTraineeID().intValue() == trainee
-					.getTraineeID().intValue()) {
-				if (te.getInventory().getInventoryID().intValue() == inventory
-						.getInventoryID().intValue()) {
+			if (te.getTrainee().getTraineeID() == trainee
+					.getTraineeID()) {
+				if (te.getInventory().getInventoryID() == inventory
+						.getInventoryID()) {
 					if (te.getDateReturned() == 0) {
 						return true;
 					}
@@ -118,8 +118,8 @@ public class TraineeEquipmentProvisioningFragment extends Fragment implements
 	private boolean isDeviceAssignedToAnyOne() {
 		for (TraineeEquipmentDTO te : traineeEquipmentList) {
 
-			if (te.getInventory().getInventoryID().intValue() == inventory
-					.getInventoryID().intValue()) {
+			if (te.getInventory().getInventoryID() == inventory
+					.getInventoryID()) {
 				if (te.getDateReturned() == 0) {
 					return true;
 				}

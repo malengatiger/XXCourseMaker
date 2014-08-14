@@ -20,7 +20,7 @@ public class CompanyDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
 
-	private Integer companyID;
+	private int companyID;
     
     private String companyName;
     
@@ -75,11 +75,11 @@ public class CompanyDTO  implements Serializable, CourseMakerData {
 		this.courseList = courseList;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 

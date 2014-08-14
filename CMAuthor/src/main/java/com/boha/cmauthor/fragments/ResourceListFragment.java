@@ -114,8 +114,8 @@ public class ResourceListFragment extends AbstractBuilder {
 
 		txtCount = (TextView) view.findViewById(R.id.LH_count);
 		TextView label = (TextView) view.findViewById(R.id.LH_label);
-		Statics.setRobotoFontRegular(ctx, crsName);
-		Statics.setRobotoFontBold(ctx, lessonName);
+		//Statics.setRobotoFontRegular(ctx, crsName);
+    //		Statics.setRobotoFontBold(ctx, lessonName);
 		Statics.setRobotoFontRegular(ctx, txtCount);
 		Statics.setRobotoFontRegular(ctx, label);
 		txtCount.setOnClickListener(new OnClickListener() {
@@ -136,7 +136,7 @@ public class ResourceListFragment extends AbstractBuilder {
 		editDescription = (EditText) view.findViewById(R.id.CRS_desc);
 		btnSave = (Button) view.findViewById(R.id.CRS_btnSave);
 		listView = (ListView) view.findViewById(R.id.CRS_listView);
-		addLayout = (LinearLayout) view.findViewById(R.id.CRS_layout1);
+		addLayout =  view.findViewById(R.id.CRS_layout1);
 		addLayout.setVisibility(View.GONE);
 
 		btnCancel = (Button) view.findViewById(R.id.CRS_btnCancel);

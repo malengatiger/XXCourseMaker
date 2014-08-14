@@ -20,16 +20,16 @@ public class TraineeStatusTypeDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
 
-	private Integer traineeStatusTypeID;
+	private int traineeStatusTypeID;
     private String traineeStatusTypeName;
     
    
 
-    public Integer getTraineeStatusTypeID() {
+    public int getTraineeStatusTypeID() {
         return traineeStatusTypeID;
     }
 
-    public void setTraineeStatusTypeID(Integer traineeStatusTypeID) {
+    public void setTraineeStatusTypeID(int traineeStatusTypeID) {
         this.traineeStatusTypeID = traineeStatusTypeID;
     }
 

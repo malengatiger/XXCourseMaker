@@ -263,7 +263,7 @@ private void getCoursesByClass() {
 		}
 	});
 }
-	Integer trainingClassID;
+	int trainingClassID;
 	DatePicker startPicker, endPicker;
 	ExpandableListAdapter adapter;
 	List<TrainingClassCourseDTO> trainingClassCourseList;
@@ -278,7 +278,7 @@ private void getCoursesByClass() {
 	
 	
 
-	public void setTrainingClassID(Integer trainingClassID) {
+	public void setTrainingClassID(int trainingClassID) {
 		this.trainingClassID = trainingClassID;
 	}
 

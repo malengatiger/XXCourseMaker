@@ -61,14 +61,14 @@ public class CourseOverViewFragment extends Fragment implements PageInterface {
 //			TextView name = (TextView)lsnView.findViewById(R.id.LSN_name);
 //			TextView pr = (TextView)lsnView.findViewById(R.id.LSN_priority);
 //			name.setText(lesson.getLessonName());
-//			ZeroUtil.formatPadWithZero(pr, lesson.getPriorityFlag().intValue());
+//			ZeroUtil.formatPadWithZero(pr, lesson.getPriorityFlag());
 //			LinearLayout activitiesLayout = (LinearLayout) lsnView.findViewById(R.id.LSN_activitiesLayout);
 //			for (ActivityDTO act : lesson.getActivityList()) {
 //				View actView = mInflater.inflate(R.layout.act_overview_item, null);
 //				TextView nameA = (TextView)actView.findViewById(R.id.ACT_name);
 //				TextView prA = (TextView)actView.findViewById(R.id.ACT_priority);
 //				nameA.setText(act.getActivityName());
-//				ZeroUtil.formatPadWithZero(prA, act.getPriorityFlag().intValue());
+//				ZeroUtil.formatPadWithZero(prA, act.getPriorityFlag());
 //				activitiesLayout.addView(actView);
 //			}
 //

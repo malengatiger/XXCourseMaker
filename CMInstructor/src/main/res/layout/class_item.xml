@@ -95,9 +95,8 @@
                 android:layout_toRightOf="@id/AR_endLabel"
                 android:text="23 December 2015" />
         </RelativeLayout>
-
         <LinearLayout
-            android:id="@+id/AR_totalTasksLayout"
+            android:id="@+id/AR_totalTrainLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -105,8 +104,34 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/AR_totalTasks"
+                android:id="@+id/AR_totalTrainees"
                 style="@style/Title3TextStyleBlack"
+                android:textColor="@color/white"
+                android:background="@drawable/xgreen_oval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="17" />
+
+            <TextView
+                android:id="@+id/AR_totalTrLabel"
+                style="@style/TextStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/trainee_total" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/AR_totalTasksLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/AR_totalTrainLayout"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/AR_totalTasks"
+                style="@style/Title2TextStyleBlack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="24" />

@@ -13,12 +13,17 @@ public class Statics {
 	//
 	//public static final String URL = "https://bohamaker.com/cm/";
 	//public static final String IMAGE_URL = "https://bohamaker.com/coursemaker_images/";
-	
+	//public static final String WEBSOCKET_URL = "wss://bohamaker.com/cm/endpoint";
 	/*
 	 * LOCAL URL - pecanwood dungeon
 	 */
 	public static final String URL = "http://192.168.1.111:8050/cm/";
 	public static final String IMAGE_URL = "http://192.168.1.111:8050/coursemaker_images/";
+    public static final String WEBSOCKET_URL = "ws://192.168.1.111:8050/cm/",
+            AUTHOR_ENDPOINT = "wsauthor",
+            ADMIN_ENDPOINT = "wsadmin",
+            INSTRUCTOR_ENDPOINT = "wsinstructor",
+            TRAINEE_ENDPOINT = "wstrainee";
 	//
 	/**
 	 * Servlet URL strings
@@ -32,9 +37,10 @@ public class Statics {
 	public static final String SERVLET_TEAM = "team?JSON=";
 
     public static final String CRASH_REPORTS_URL = URL + "crash?";
-	
-	
-	public static final String HEADER_FONT = "fonts/DroidSerif-BoldItalic.ttf";
+    public static final String SESSION_ID = "webSocketSessionID";
+
+
+    public static final String HEADER_FONT = "fonts/DroidSerif-BoldItalic.ttf";
 	public static final String DROID_FONT = "DroidSans.ttf";
 	public static final String DROID_FONT_BOLD = "DroidSans-Bold.ttf";
 	//	

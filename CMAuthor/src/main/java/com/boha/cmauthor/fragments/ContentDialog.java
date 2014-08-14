@@ -1,8 +1,5 @@
 package com.boha.cmauthor.fragments;
 
-import com.boha.cmauthor.R;
-import com.boha.coursemaker.util.ToastUtil;
-
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -13,6 +10,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.boha.cmauthor.R;
+import com.boha.coursemaker.util.ToastUtil;
 
 public class ContentDialog extends DialogFragment {
 
@@ -46,7 +46,7 @@ public class ContentDialog extends DialogFragment {
         	txtHeader.setText(header);
         }
         if (label != null) {
-        	txtHeaderLabel.setText(label);
+        	//txtHeaderLabel.setText(label);
         }
         if (addLabel != null) {
         	txtAddLabel.setText(addLabel);

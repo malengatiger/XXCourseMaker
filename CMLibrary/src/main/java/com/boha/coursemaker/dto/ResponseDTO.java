@@ -33,7 +33,7 @@ public class ResponseDTO implements Serializable, CourseMakerData,
 	public static final int ERROR_DELETE_NOT_POSSIBLE = 190;
 
 	private int statusCode;
-	private String message, GCMRegistrationID;
+	private String message, GCMRegistrationID, sessionID;
 
 	private CategoryDTO category;
 	private AdministratorDTO administrator;
@@ -71,6 +71,14 @@ public class ResponseDTO implements Serializable, CourseMakerData,
     private List<SkillDTO> skillList;
     private List<SkillLevelDTO> skillLevelList;
     private List<TraineeSkillDTO> traineeSkillList;
+
+    public String getSessionID() {
+        return sessionID;
+    }
+
+    public void setSessionID(String sessionID) {
+        this.sessionID = sessionID;
+    }
 
     public List<SkillDTO> getSkillList() {
         return skillList;

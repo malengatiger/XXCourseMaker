@@ -539,6 +539,6 @@ public abstract class BaseRegistration extends FragmentActivity implements
 	protected InstructorDTO instructor;
 	protected TrainingClassDTO trainingClass;
 	protected String gcmRegistrationID;
-	protected Integer trainingClassID, cityID;
+	protected int trainingClassID, cityID;
 	protected GcmDeviceDTO gcmDevice;
 }

@@ -57,7 +57,8 @@ public class MainPagerActivity extends FragmentActivity implements
 
         ACRA.getErrorReporter().putCustomData("companyID", "" + company.getCompanyID());
         ACRA.getErrorReporter().putCustomData("companyName", company.getCompanyName());
-		
+        refresh = getIntent().getBooleanExtra("refresh", false);
+        Log.d(LOG, "######### refresh: " + refresh);
 
 		setTitle(company.getCompanyName());
 		if (savedInstanceState != null) {
@@ -69,9 +70,11 @@ public class MainPagerActivity extends FragmentActivity implements
 			}
 		}
 
+
+
 	}
 
-
+    boolean refresh;
 
 	@Override
 	public void onDestroy() {
@@ -131,7 +134,7 @@ public class MainPagerActivity extends FragmentActivity implements
 
 	@Override
 	public void onResume() {
-		Log.i(LOG, "-- onResume  - " + LOG);
+		Log.i(LOG, "--------------- onResume  - " + LOG);
 		super.onResume();
 	}
 
@@ -155,6 +158,11 @@ public class MainPagerActivity extends FragmentActivity implements
 		Log.i(LOG, "-- onCreateOptions  --- getting remote data");
 		getMenuInflater().inflate(R.menu.main_pager, menu);
 		mMenu = menu;
+
+        if (refresh) {
+            getRemoteData();
+            return  true;
+        }
 
 		if (response == null)
 

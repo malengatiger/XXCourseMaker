@@ -77,31 +77,52 @@ public class GcmIntentService extends GCMBaseIntentService {
 		HelpRequestDTO dto;
 		try {
 			dto = gson.fromJson(message, HelpRequestDTO.class);
+            sendHelpNotification(msgIntent, dto);
 		} catch (Exception e) {
-			Log.e(TAG, "gcm message cannot be parsed. might be null ... why?");
-			return;
+			sendRefreshNotification(msgIntent);
 		}
 
-		Intent wpaIntent = new Intent(this, HelpRequestPagerActivity.class);
-		wpaIntent.putExtra("helpRequest", dto);
-		
-		PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-				wpaIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
-		String contentText = dto.getComment();
-		if (dto.getCourseTraineeActivity() != null) {
-			contentText = dto.getCourseTraineeActivity().getCourseName();
-		}
-		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
-				this).setSmallIcon(R.drawable.question32)
-				.setContentTitle(dto.getCourseTraineeActivity().getTraineeName())
-				.setStyle(new NotificationCompat.BigTextStyle().bigText("Who be me?"))
-				.setContentText(contentText);
-
-		mBuilder.setContentIntent(contentIntent);
-		mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
 	}
-	
+
+    private void sendRefreshNotification(Intent msgIntent) {
+        Intent wpaIntent = new Intent(this, MainPagerActivity.class);
+        wpaIntent.putExtra("refresh", true);
+
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
+                wpaIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        String contentText = getApplicationContext().getResources().getString(R.string.refresh_activities);
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
+                this).setSmallIcon(R.drawable.question32)
+                .setContentTitle(getApplicationContext().getResources().getString(R.string.refresh))
+                .setStyle(new NotificationCompat.BigTextStyle().bigText("Who be me?"))
+                .setContentText(contentText);
+
+        mBuilder.setContentIntent(contentIntent);
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+    }
+    private void sendHelpNotification(Intent msgIntent, HelpRequestDTO dto) {
+        Intent wpaIntent = new Intent(this, HelpRequestPagerActivity.class);
+        wpaIntent.putExtra("helpRequest", dto);
+
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
+                wpaIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        String contentText = dto.getComment();
+        if (dto.getCourseTraineeActivity() != null) {
+            contentText = dto.getCourseTraineeActivity().getCourseName();
+        }
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(
+                this).setSmallIcon(R.drawable.question32)
+                .setContentTitle(dto.getCourseTraineeActivity().getTraineeName())
+                .setStyle(new NotificationCompat.BigTextStyle().bigText("Who be me?"))
+                .setContentText(contentText);
+
+        mBuilder.setContentIntent(contentIntent);
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+    }
 	static final String TAG = "GcmIntentService-Instructor";
 
 }

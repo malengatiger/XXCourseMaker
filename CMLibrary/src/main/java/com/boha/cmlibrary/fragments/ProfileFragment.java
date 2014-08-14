@@ -245,7 +245,7 @@ public class ProfileFragment extends Fragment {
 
 		String uri = SharedUtil.getThumbUri(ctx);
 		if (uri != null) {
-			Integer companyID = null, actorID = null;
+			int companyID = 0, actorID = 0;
 			int pType = 0;
 			switch (type) {
 			case ADMIN:

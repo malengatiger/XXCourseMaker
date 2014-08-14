@@ -13,10 +13,15 @@
     </style>
 
     <!-- Application theme. -->
-    <style name="AppTheme"></style>
+    <style name="AppTheme" parent="android:Theme.Holo.Light" >
+        <item name="android:logo">@drawable/ball_48</item>
+        <item name="android:actionBarStyle">@style/actionBarStyle</item>
 
-    <style name="actionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar.TabText">
+    </style>
+    <style name="actionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@color/white</item>
         <item name="android:textSize">12sp</item>
     </style>
 
 </resources>
+

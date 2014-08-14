@@ -14,14 +14,16 @@
         android:layout_alignParentTop="true"
         android:background="@color/blue_dark1"
         android:orientation="vertical"
-        android:padding="5dp" >
+         >
 
         <TextView
             android:id="@+id/CAT_author"
             style="@style/TextStyleGrey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" android:textSize="20sp"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:textSize="20sp"
             android:text="Author Full Name"
             android:textColor="@color/white" />
         <TextView
@@ -31,8 +33,39 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="14sp"
+            android:visibility="gone"
             android:text="Company Name"
             android:textColor="@color/white" />
+        <RelativeLayout
+            android:id="@+id/LH_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xwhite_rounded_corners"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/LH_label"
+                style="@style/TextStyleGrey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:text="@string/category_list"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/LH_count"
+                style="@style/RedCountBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="00" android:gravity="center"
+                android:textSize="16sp" />
+        </RelativeLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -64,7 +97,8 @@
                 android:text="@string/import_category"
                 android:layout_width="match_parent"
                 android:layout_below="@id/CRS_label2"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
+                android:drawableLeft="@drawable/ic_action_search"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
 
@@ -85,11 +119,9 @@
 
             <Button
                 android:id="@+id/CAT_btnCancel"
-                style="@style/ButtonCancelSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/cancel" />
+                android:drawableLeft="@drawable/cancel_32" />
 
             <View
                 android:layout_width="20dp"
@@ -98,57 +130,23 @@
 
             <Button
                 android:id="@+id/CAT_btnSave"
-                style="@style/ButtonNavyBlueSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
+                android:drawableLeft="@drawable/ic_action_upload"
                 android:text="@string/save" />
         </LinearLayout>
     </LinearLayout>
 
-    <View
-        android:id="@+id/LH_space"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:layout_below="@id/CAT_layout1" />
 
-    <RelativeLayout
-        android:id="@+id/LH_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/LH_space"
-        android:background="@drawable/xwhite_rounded_corners"
-        android:orientation="horizontal"
-        android:padding="10dp" >
 
-        <TextView
-            android:id="@+id/LH_label"
-            style="@style/TextStyleGrey"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
-            android:text="@string/category_list"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/LH_count"
-            style="@style/RedCountBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:text="00" android:gravity="center"
-            android:textSize="16sp" />
-    </RelativeLayout>
 
     <ListView
         android:id="@+id/CAT_listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/LH_layout"
+        android:layout_below="@id/CAT_layout1"
         android:layout_marginTop="5dp"
         android:background="@color/grey"
         android:dividerHeight="5dp" />

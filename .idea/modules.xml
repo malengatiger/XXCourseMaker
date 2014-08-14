@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/CMServerProbe/CMServerProbe.iml" filepath="$PROJECT_DIR$/CMServerProbe/CMServerProbe.iml" />
       <module fileurl="file://$PROJECT_DIR$/CMTrainee/CMTrainee.iml" filepath="$PROJECT_DIR$/CMTrainee/CMTrainee.iml" />
       <module fileurl="file://$PROJECT_DIR$/XXCourseMaker.iml" filepath="$PROJECT_DIR$/XXCourseMaker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

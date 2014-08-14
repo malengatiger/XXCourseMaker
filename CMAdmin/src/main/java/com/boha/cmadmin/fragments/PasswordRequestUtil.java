@@ -14,19 +14,19 @@ import com.boha.coursemaker.util.ToastUtil;
 
 public class PasswordRequestUtil {
 
-	public static void sendTraineePasswordRequest(Integer id, Context ctx, BusyListener busyListener, PasswordRequestListener listener) {
+	public static void sendTraineePasswordRequest(int id, Context ctx, BusyListener busyListener, PasswordRequestListener listener) {
 		 sendPassword(id, TRAINEE, ctx, busyListener, listener);
 	}
-	public static void sendInstructorPasswordRequest(Integer id, Context ctx, BusyListener busyListener, PasswordRequestListener listener) {
+	public static void sendInstructorPasswordRequest(int id, Context ctx, BusyListener busyListener, PasswordRequestListener listener) {
 		 sendPassword(id, INSTRUCTOR, ctx, busyListener, listener);
 	}
-	public static void sendAuthorPasswordRequest(Integer id, Context ctx, BusyListener busyListener, PasswordRequestListener listener) {
+	public static void sendAuthorPasswordRequest(int id, Context ctx, BusyListener busyListener, PasswordRequestListener listener) {
 		 sendPassword(id, AUTHOR, ctx, busyListener, listener);
 	}
-	public static void sendAdminPasswordRequest(Integer id, Context ctx, BusyListener busyListener, PasswordRequestListener listener) {
+	public static void sendAdminPasswordRequest(int id, Context ctx, BusyListener busyListener, PasswordRequestListener listener) {
 		 sendPassword(id, ADMINISTRATOR, ctx, busyListener, listener);
 	}
-	private static void sendPassword(Integer id, int type, final Context ctx, final BusyListener busyListener, final PasswordRequestListener listener) {
+	private static void sendPassword(int id, int type, final Context ctx, final BusyListener busyListener, final PasswordRequestListener listener) {
 		RequestDTO req = new RequestDTO();		
 		switch (type) {
 		case TRAINEE:

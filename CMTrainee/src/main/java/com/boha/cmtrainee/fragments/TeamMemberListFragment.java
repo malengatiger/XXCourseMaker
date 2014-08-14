@@ -129,8 +129,8 @@ public class TeamMemberListFragment extends Fragment implements PageInterface {
 			return;
 		}
 		for (TeamMemberDTO tm : team.getTeamMemberList()) {
-			if (tm.getTraineeID().intValue() == selectedTrainee.getTraineeID()
-					.intValue()) {
+			if (tm.getTraineeID() == selectedTrainee.getTraineeID()
+					) {
 				ToastUtil.toast(ctx,
 						ctx.getResources().getString(R.string.already_in_team));
 				return;
@@ -180,8 +180,8 @@ public class TeamMemberListFragment extends Fragment implements PageInterface {
 
 	private void addSelfAsMember() {
 		for (TeamMemberDTO tm : team.getTeamMemberList()) {
-			if (trainee.getTraineeID().intValue() == tm.getTraineeID()
-					.intValue()) {
+			if (trainee.getTraineeID() == tm.getTraineeID()
+					) {
 				ToastUtil.toast(ctx,
 						ctx.getResources().getString(R.string.already_in_team));
 				return;
@@ -300,8 +300,8 @@ public class TeamMemberListFragment extends Fragment implements PageInterface {
 		if (team.getTeamMemberList() != null) {
 			boolean found = false;
 			for (TeamMemberDTO tm : team.getTeamMemberList()) {
-				if (tm.getTraineeID().intValue() == trainee.getTraineeID()
-						.intValue()) {
+				if (tm.getTraineeID() == trainee.getTraineeID()
+						) {
 					found = true;
 					break;
 				}

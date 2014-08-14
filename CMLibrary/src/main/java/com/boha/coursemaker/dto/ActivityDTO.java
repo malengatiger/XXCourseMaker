@@ -47,13 +47,11 @@ public class ActivityDTO implements Serializable, Comparable<ActivityDTO>, Cours
         this.courseID = courseID;
     }
 
-    public Integer getActivityID() {
+    public int getActivityID() {
         return activityID;
     }
 
-    public void setActivityID(Integer activityID) {
-        this.activityID = activityID;
-    }
+
 
     public String getActivityName() {
         return activityName;
@@ -71,13 +69,10 @@ public class ActivityDTO implements Serializable, Comparable<ActivityDTO>, Cours
         this.description = description;
     }
 
-    public Integer getPriorityFlag() {
+    public int getPriorityFlag() {
         return priorityFlag;
     }
 
-    public void setPriorityFlag(Integer priorityFlag) {
-        this.priorityFlag = priorityFlag;
-    }
 
 
 	@Override

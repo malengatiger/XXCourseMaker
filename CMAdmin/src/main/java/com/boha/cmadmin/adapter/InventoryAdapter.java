@@ -63,7 +63,7 @@ public class InventoryAdapter extends ArrayAdapter<InventoryDTO> {
 
 		viewHolderItem.txtSerial
 				.setText(inventory.getSerialNumber());
-		if (inventory.getYearPurchased() != null)
+		if (inventory.getYearPurchased() != 0)
 			viewHolderItem.txtYear.setText("" + inventory.getYearPurchased());
 		else 
 			viewHolderItem.txtYear.setText("" );

@@ -19,15 +19,15 @@ public class CountryDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
     
-	private Integer countryID;  
+	private int countryID;  
     private String countryName;   
     private Double latitude;
     private Double longitude;
     private List<ProvinceDTO> provinceList;
-	public Integer getCountryID() {
+	public int getCountryID() {
 		return countryID;
 	}
-	public void setCountryID(Integer countryID) {
+	public void setCountryID(int countryID) {
 		this.countryID = countryID;
 	}
 	public String getCountryName() {

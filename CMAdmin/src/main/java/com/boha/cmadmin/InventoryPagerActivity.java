@@ -298,7 +298,7 @@ public class InventoryPagerActivity extends FragmentActivity implements BusyList
 			resp.setInventoryList(inventoryList);
 			Intent data = new Intent();
 			data.putExtra("response", resp);
-			data.putExtra("equipmentID", equipment.getEquipmentID().intValue());
+			data.putExtra("equipmentID", equipment.getEquipmentID());
 			setResult(Activity.RESULT_OK, data);
 		} else {
 			setResult(Activity.RESULT_CANCELED);

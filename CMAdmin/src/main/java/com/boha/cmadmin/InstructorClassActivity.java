@@ -99,7 +99,7 @@ public class InstructorClassActivity extends Activity {
 	private boolean checkIfExists() {
 		boolean found = false;
 		for (InstructorClassDTO ic : instructorClassList) {
-			if (ic.getTrainingClassID().intValue() == trainingClass.getTrainingClassID().intValue()) {
+			if (ic.getTrainingClassID() == trainingClass.getTrainingClassID()) {
 				return true;
 			}
 		}

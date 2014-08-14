@@ -248,7 +248,7 @@ public class CompanyPagerActivity extends FragmentActivity implements BusyListen
 	public void onCompanySelected(CompanyStatsDTO companyStats) {
 		int index = 0;
 		for (CompanyStatsDTO cs : response.getStatsList()) {
-			if (cs.getCompanyID().intValue() == companyStats.getCompanyID().intValue()) {
+			if (cs.getCompanyID() == companyStats.getCompanyID()) {
 				mPager.setCurrentItem(index + 1, true);
 			}
 			index++;

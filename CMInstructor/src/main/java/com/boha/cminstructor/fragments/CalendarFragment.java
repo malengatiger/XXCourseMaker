@@ -651,8 +651,8 @@ public class CalendarFragment extends Fragment implements PageInterface {
 	private void setSelected() {
 		int index = 0;
 		for (TrainingClassDTO tc : trainingClassList) {
-			if (tc.getTrainingClassID().intValue() == instructorClass
-					.getTrainingClassID().intValue()) {
+			if (tc.getTrainingClassID() == instructorClass
+					.getTrainingClassID()) {
 				spinInstructorClass.setSelection(index);
 				trainingClass = tc;
 				return;

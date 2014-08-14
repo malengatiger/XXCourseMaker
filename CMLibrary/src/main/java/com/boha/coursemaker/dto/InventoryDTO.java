@@ -9,22 +9,22 @@ public class InventoryDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
 
-	private Integer inventoryID;
+	private int inventoryID;
     private String serialNumber;
     private long dateRegistered;
-    private Integer conditionFlag;
+    private int conditionFlag;
     private long dateUpdated;
     private String model;
-    private Integer yearPurchased;
+    private int yearPurchased;
     private List<TraineeDTO> traineeList;
    
     private EquipmentDTO equipment;
 
-	public Integer getInventoryID() {
+	public int getInventoryID() {
 		return inventoryID;
 	}
 
-	public void setInventoryID(Integer inventoryID) {
+	public void setInventoryID(int inventoryID) {
 		this.inventoryID = inventoryID;
 	}
 
@@ -44,11 +44,11 @@ public class InventoryDTO  implements Serializable, CourseMakerData {
 		this.dateRegistered = dateRegistered;
 	}
 
-	public Integer getConditionFlag() {
+	public int getConditionFlag() {
 		return conditionFlag;
 	}
 
-	public void setConditionFlag(Integer conditionFlag) {
+	public void setConditionFlag(int conditionFlag) {
 		this.conditionFlag = conditionFlag;
 	}
 
@@ -68,11 +68,11 @@ public class InventoryDTO  implements Serializable, CourseMakerData {
 		this.model = model;
 	}
 
-	public Integer getYearPurchased() {
+	public int getYearPurchased() {
 		return yearPurchased;
 	}
 
-	public void setYearPurchased(Integer yearPurchased) {
+	public void setYearPurchased(int yearPurchased) {
 		this.yearPurchased = yearPurchased;
 	}
 

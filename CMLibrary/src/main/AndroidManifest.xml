@@ -3,16 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.boha.cmlibrary"
     android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionName="1.0">
 
     <uses-sdk
         android:minSdkVersion="15"
         android:targetSdkVersion="19"
-        tools:node="replace"/>
+        tools:node="replace" />
 
-    <application
-        android:allowBackup="true"
-         >
+    <application android:allowBackup="true">
+        <!-- -->
+        <!-- Google Analytics Version v4 needs this value for easy tracking -->
+        <meta-data
+            android:name="com.google.android.gms.analytics.globalConfigResource"
+            android:resource="@xml/global_tracker" />;
 
     </application>
 

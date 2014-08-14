@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.util.Log;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
@@ -11,6 +12,7 @@ import com.boha.coursemaker.util.Statics;
 import com.boha.volley.toolbox.BitmapLruCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 import org.acra.ACRA;
 import org.acra.ReportField;
 import org.acra.annotation.ReportsCrashes;
@@ -28,7 +30,7 @@ import org.acra.annotation.ReportsCrashes;
                 ReportField.LOGCAT},
         socketTimeout = 3000
 )
-public class CMApp extends Application{
+public class CMApp extends Application implements Thread.UncaughtExceptionHandler {
     @Override
     public void onCreate() {
         super.onCreate();
@@ -37,6 +39,8 @@ public class CMApp extends Application{
         ACRA.init(this);
         Log.e(LOG, "###### ACRA Crash Reporting has been initiated");
         initializeVolley(getApplicationContext());
+
+
 
     }
     public void initializeVolley(Context context) {
@@ -77,4 +81,27 @@ public class CMApp extends Application{
     RequestQueue requestQueue;
     BitmapLruCache bitmapLruCache;
     static final String LOG = "CMApp";
+    // The following line should be changed to include the correct property id.
+    private static final String PROPERTY_ID = "UA-53661372-1";
+
+    public static int GENERAL_TRACKER = 0;
+
+    @Override
+    public void uncaughtException(Thread thread, Throwable throwable) {
+        Log.e(LOG,"UncaughtExceptionHandler throwable: " + throwable.getMessage());
+    }
+
+    /**
+     * Enum used to identify the tracker that needs to be used for tracking.
+     *
+     * A single tracker is usually enough for most purposes. In case you do need multiple trackers,
+     * storing them all in Application object helps ensure that they are created only once per
+     * application instance.
+     */
+    public enum TrackerName {
+        APP_TRACKER, // Tracker used only in this app.
+        GLOBAL_TRACKER, // Tracker used by all the apps from a company. eg: roll-up tracking.
+        ECOMMERCE_TRACKER, // Tracker used by all ecommerce transactions from a company.
+    }
+
 }

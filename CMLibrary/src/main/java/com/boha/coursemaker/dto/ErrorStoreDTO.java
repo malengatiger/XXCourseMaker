@@ -7,14 +7,14 @@ public class ErrorStoreDTO implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer errorStoreID;
+	private int errorStoreID;
     private int statusCode;
     private String message, origin;
     private long dateOccured;
-	public Integer getErrorStoreID() {
+	public int getErrorStoreID() {
 		return errorStoreID;
 	}
-	public void setErrorStoreID(Integer errorStoreID) {
+	public void setErrorStoreID(int errorStoreID) {
 		this.errorStoreID = errorStoreID;
 	}
 	public int getStatusCode() {

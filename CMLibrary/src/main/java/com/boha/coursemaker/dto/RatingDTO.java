@@ -20,25 +20,25 @@ public class RatingDTO  implements Serializable, CourseMakerData, LookupInterfac
 	   
 		private static final long serialVersionUID = 1L;
 
-	private Integer ratingID;
+	private int ratingID;
     
     private String ratingName;
-    private Integer ratingNumber, companyID;
+    private int ratingNumber, companyID;
     
 
-    public Integer getCompanyID() {
+    public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 
-	public Integer getRatingID() {
+	public int getRatingID() {
         return ratingID;
     }
 
-    public void setRatingID(Integer ratingID) {
+    public void setRatingID(int ratingID) {
         this.ratingID = ratingID;
     }
 
@@ -50,11 +50,11 @@ public class RatingDTO  implements Serializable, CourseMakerData, LookupInterfac
         this.ratingName = ratingName;
     }
 
-    public Integer getRatingNumber() {
+    public int getRatingNumber() {
         return ratingNumber;
     }
 
-    public void setRatingNumber(Integer ratingNumber) {
+    public void setRatingNumber(int ratingNumber) {
         this.ratingNumber = ratingNumber;
     }
 }

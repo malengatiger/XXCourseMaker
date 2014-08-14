@@ -12,16 +12,16 @@ public class AdministratorDTO  implements Serializable, CourseMakerData, Compara
 		private static final long serialVersionUID = 1L;
 	
 
-	private Integer administratorID;
+	private int administratorID;
     private String firstName;
     private String lastName;
     private String email;
     private String cellphone, password;
 
     private long dateRegistered;
-    private Integer activeFlag;
-    private Integer superUserFlag;
-    private Integer companyID;
+    private int activeFlag;
+    private int superUserFlag;
+    private int companyID;
     private List<GcmDeviceDTO> gcmDeviceList;
     @Override
 	public int compareTo(AdministratorDTO arg0) {
@@ -100,11 +100,11 @@ public class AdministratorDTO  implements Serializable, CourseMakerData, Compara
 		this.activeFlag = activeFlag;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 
@@ -116,11 +116,11 @@ public class AdministratorDTO  implements Serializable, CourseMakerData, Compara
 		this.gcmDeviceList = gcmDeviceList;
 	}
 
-	public Integer getSuperUserFlag() {
+	public int getSuperUserFlag() {
 		return superUserFlag;
 	}
 
-	public void setSuperUserFlag(Integer superUserFlag) {
+	public void setSuperUserFlag(int superUserFlag) {
 		this.superUserFlag = superUserFlag;
 	}
 }

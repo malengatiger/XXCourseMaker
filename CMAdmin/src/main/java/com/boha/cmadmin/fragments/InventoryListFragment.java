@@ -120,7 +120,7 @@ public class InventoryListFragment extends Fragment implements PageInterface {
 				R.string.admin_update_equipment));
 		txtModel.setText(inventory.getModel());
 		txtSerial.setText(inventory.getSerialNumber());
-		txtYear.setText("" + inventory.getYearPurchased().intValue());
+		txtYear.setText("" + inventory.getYearPurchased());
 		btnSave.setText(ctx.getResources().getString(R.string.save));
 		currentOperation = UPDATE;
 	}
@@ -131,7 +131,7 @@ public class InventoryListFragment extends Fragment implements PageInterface {
 				R.string.admin_delete_equipment));
 		txtModel.setText(inventory.getModel());
 		txtSerial.setText(inventory.getSerialNumber());
-		txtYear.setText("" + inventory.getYearPurchased().intValue());
+		txtYear.setText("" + inventory.getYearPurchased());
 		btnSave.setText(ctx.getResources().getString(R.string.delete));
 		currentOperation = DELETE;
 	}
@@ -272,7 +272,7 @@ public class InventoryListFragment extends Fragment implements PageInterface {
 		layoutInventory.startAnimation(a);
 	}
 
-	private int getIndex(Integer id) {
+	private int getIndex(int id) {
 		int index = 0;
 		for (InventoryDTO e : inventoryList) {
 			if (e.getInventoryID() == id) {

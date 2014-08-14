@@ -2,17 +2,17 @@ package com.boha.coursemaker.dto;
 
 public class TraineeShoutDTO {
 
-	private Integer traineeShoutID;
+	private int traineeShoutID;
 	private long dateRegistered;
 	private String remarks;
-	private Integer traineeID;
-	private Integer helpTypeID;
+	private int traineeID;
+	private int helpTypeID;
 
-	public Integer getTraineeShoutID() {
+	public int getTraineeShoutID() {
 		return traineeShoutID;
 	}
 
-	public void setTraineeShoutID(Integer traineeShoutID) {
+	public void setTraineeShoutID(int traineeShoutID) {
 		this.traineeShoutID = traineeShoutID;
 	}
 
@@ -32,19 +32,19 @@ public class TraineeShoutDTO {
 		this.remarks = remarks;
 	}
 
-	public Integer getTraineeID() {
+	public int getTraineeID() {
 		return traineeID;
 	}
 
-	public void setTraineeID(Integer traineeID) {
+	public void setTraineeID(int traineeID) {
 		this.traineeID = traineeID;
 	}
 
-	public Integer getHelpTypeID() {
+	public int getHelpTypeID() {
 		return helpTypeID;
 	}
 
-	public void setHelpTypeID(Integer helpTypeID) {
+	public void setHelpTypeID(int helpTypeID) {
 		this.helpTypeID = helpTypeID;
 	}
 }

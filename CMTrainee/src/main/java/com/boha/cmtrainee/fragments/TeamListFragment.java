@@ -153,8 +153,8 @@ public class TeamListFragment extends Fragment implements PageInterface {
 		Log.w(LOG, "addTeamMembers, list : " + list.size());
 		if (!list.isEmpty()) {
 			for (TeamDTO t : teamList) {
-				if (list.get(0).getTeamID().intValue() == t.getTeamID()
-						.intValue()) {
+				if (list.get(0).getTeamID() == t.getTeamID()
+						) {
 					t.getTeamMemberList().addAll(0, list);
 				}
 			}

@@ -290,7 +290,7 @@ public class AuthorListFragment extends Fragment implements PageInterface, BusyL
 		@Override
 		protected void onPostExecute(Integer res) {
 			
-			if (res.intValue() > 0) {
+			if (res > 0) {
 				Log.e(LOG, "Problem getting file from bitmap");
 				return;
 			}
@@ -316,7 +316,7 @@ public class AuthorListFragment extends Fragment implements PageInterface, BusyL
 							+ author.getLastName() + " id: " + author.getAuthorID());
 					int i = 0;
 					for (AuthorDTO t : authorList) {
-						if (t.getAuthorID().intValue() == author.getAuthorID().intValue()) {
+						if (t.getAuthorID() == author.getAuthorID()) {
 							break;
 						}
 						i++;

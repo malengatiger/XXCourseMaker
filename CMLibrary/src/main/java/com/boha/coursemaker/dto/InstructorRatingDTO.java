@@ -17,25 +17,25 @@ import java.io.Serializable;
 public class InstructorRatingDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
-private Integer instructorRatingID;
+private int instructorRatingID;
     private long dateUpdated;
     
     private String comment, activityName;
-    private Integer completedFlag;
+    private int completedFlag;
    
     private RatingDTO rating;
     
-    private Integer courseTraineeActivityID;
+    private int courseTraineeActivityID;
     
-    private Integer instructorID; 
+    private int instructorID; 
     
  
 
-    public Integer getInstructorRatingID() {
+    public int getInstructorRatingID() {
         return instructorRatingID;
     }
 
-    public void setInstructorRatingID(Integer instructorRatingID) {
+    public void setInstructorRatingID(int instructorRatingID) {
         this.instructorRatingID = instructorRatingID;
     }
 
@@ -63,11 +63,11 @@ private Integer instructorRatingID;
         this.activityName = activityName;
     }
 
-    public Integer getCompletedFlag() {
+    public int getCompletedFlag() {
         return completedFlag;
     }
 
-    public void setCompletedFlag(Integer completedFlag) {
+    public void setCompletedFlag(int completedFlag) {
         this.completedFlag = completedFlag;
     }
 
@@ -79,19 +79,19 @@ private Integer instructorRatingID;
         this.rating = rating;
     }
 
-    public Integer getCourseTraineeActivityID() {
+    public int getCourseTraineeActivityID() {
         return courseTraineeActivityID;
     }
 
-    public void setCourseTraineeActivityID(Integer courseTraineeActivityID) {
+    public void setCourseTraineeActivityID(int courseTraineeActivityID) {
         this.courseTraineeActivityID = courseTraineeActivityID;
     }
 
-    public Integer getInstructorID() {
+    public int getInstructorID() {
         return instructorID;
     }
 
-    public void setInstructorID(Integer instructorID) {
+    public void setInstructorID(int instructorID) {
         this.instructorID = instructorID;
     }
     

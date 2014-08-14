@@ -384,7 +384,7 @@ public class ActivityListFragment extends AbstractBuilder implements
 		req.setActivityList(shuffledActivityList);
 		//debug
 		for (ActivityDTO a : shuffledActivityList) {
-			Log.i(LOG, "priority: " + a.getPriorityFlag().intValue() + " - " + a.getActivityName());
+			Log.i(LOG, "priority: " + a.getPriorityFlag() + " - " + a.getActivityName());
 		}
 		
 		activityListener.onShowProgressBar();

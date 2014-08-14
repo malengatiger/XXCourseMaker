@@ -20,25 +20,25 @@ public class ProvinceDTO  implements Serializable, CourseMakerData {
 	   
 		private static final long serialVersionUID = 1L;
 
-	private Integer provinceID, countryID;   
+	private int provinceID, countryID;   
     private String provinceName;
     private List<CityDTO> cityList;
     
    
 
-    public Integer getProvinceID() {
+    public int getProvinceID() {
         return provinceID;
     }
 
-    public void setProvinceID(Integer provinceID) {
+    public void setProvinceID(int provinceID) {
         this.provinceID = provinceID;
     }
 
-    public Integer getCountryID() {
+    public int getCountryID() {
         return countryID;
     }
 
-    public void setCountryID(Integer countryID) {
+    public void setCountryID(int countryID) {
         this.countryID = countryID;
     }
 

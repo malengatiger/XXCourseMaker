@@ -8,15 +8,15 @@ public class TeamDTO implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer teamID;
+	private int teamID;
     private String teamName, trainingClassName;
     private long dateRegistered;
-    private Integer trainingClassID;
+    private int trainingClassID;
     private List<TeamMemberDTO> teamMemberList;
-	public Integer getTeamID() {
+	public int getTeamID() {
 		return teamID;
 	}
-	public void setTeamID(Integer teamID) {
+	public void setTeamID(int teamID) {
 		this.teamID = teamID;
 	}
 	public String getTeamName() {
@@ -31,10 +31,10 @@ public class TeamDTO implements Serializable{
 	public void setDateRegistered(long dateRegistered) {
 		this.dateRegistered = dateRegistered;
 	}
-	public Integer getTrainingClassID() {
+	public int getTrainingClassID() {
 		return trainingClassID;
 	}
-	public void setTrainingClassID(Integer trainingClassID) {
+	public void setTrainingClassID(int trainingClassID) {
 		this.trainingClassID = trainingClassID;
 	}
 	public List<TeamMemberDTO> getTeamMemberList() {

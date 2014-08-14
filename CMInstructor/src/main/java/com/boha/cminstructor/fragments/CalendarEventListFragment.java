@@ -1,13 +1,5 @@
 package com.boha.cminstructor.fragments;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.List;
-import java.util.Locale;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -43,6 +35,14 @@ import com.boha.coursemaker.listeners.PageInterface;
 import com.boha.coursemaker.util.SharedUtil;
 import com.boha.coursemaker.util.Statics;
 import com.boha.coursemaker.util.ToastUtil;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Locale;
 
 public class CalendarEventListFragment extends Fragment implements
 		PageInterface {
@@ -170,7 +170,7 @@ public class CalendarEventListFragment extends Fragment implements
 	private void setSelected() {
 		int index = 0;
 		for (TrainingClassDTO tc : trainingClassList) {
-			if (tc.getTrainingClassID().intValue() == instructorClass.getTrainingClassID().intValue()) {
+			if (tc.getTrainingClassID() == instructorClass.getTrainingClassID()) {
 				spinner.setSelection(index);
 				trainingClass = tc;
 				return;

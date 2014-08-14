@@ -182,11 +182,11 @@ public class RequestDTO implements CourseMakerData {
     public static final int GET_TRAINEE_SKILLS = 1102;
     public static final int GET_TRAINING_CLASS_SKILLS = 1103;
 	//
-	private long dateFrom, dateTo;
-	private int requestType;
+	private Long dateFrom, dateTo;
+	private Integer requestType;
 	private String email, cellphone, password;
 	private String countryCode;
-	private long calendarID, startDate, endDate;
+	private Long calendarID, startDate, endDate;
 	private String GCMregistrationID;
 	// operation variables
 	private Integer companyID, lessonID, categoryID, cityID, authorID,
@@ -194,11 +194,11 @@ public class RequestDTO implements CourseMakerData {
 			instructorClassID, courseID, activityID, courseTraineeActivityID,
 			administratorID, traineeID, equipmentID, traineeEquipmentID,
 			trainingClassEventID;
-	private boolean returnEquipment;
+	private Boolean returnEquipment;
 	private CompanyDTO company;
 	private AuthorDTO author;
 	private CourseTraineeDTO courseTrainee;
-	private boolean zippedResponse = true;
+	private Boolean zippedResponse;
 	private TrainingClassDTO trainingClass;
 	private AdministratorDTO administrator;
 	private TraineeDTO trainee;
@@ -486,7 +486,7 @@ public class RequestDTO implements CourseMakerData {
 		this.author = author;
 	}
 
-	public boolean isZippedResponse() {
+	public Boolean isZippedResponse() {
 		return zippedResponse;
 	}
 

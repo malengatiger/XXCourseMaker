@@ -27,7 +27,7 @@ public class AuthorDTO implements Serializable, CourseMakerData,
 	private static final long serialVersionUID = 1L;
 
 	private List<GcmDeviceDTO> gcmDeviceList;
-	private Integer authorID;
+	private int authorID;
 
 	private String firstName;
 
@@ -41,14 +41,14 @@ public class AuthorDTO implements Serializable, CourseMakerData,
 
 	private long dateRegistered;
 
-	private Integer companyID, activeFlag;
+	private int companyID, activeFlag;
 	private List<CourseDTO> courseList;
 
-	public Integer getAuthorID() {
+	public int getAuthorID() {
 		return authorID;
 	}
 
-	public void setAuthorID(Integer authorID) {
+	public void setAuthorID(int authorID) {
 		this.authorID = authorID;
 	}
 
@@ -108,11 +108,11 @@ public class AuthorDTO implements Serializable, CourseMakerData,
 		this.courseList = courseList;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 
@@ -124,11 +124,11 @@ public class AuthorDTO implements Serializable, CourseMakerData,
 		this.gcmDeviceList = gcmDeviceList;
 	}
 
-	public Integer getActiveFlag() {
+	public int getActiveFlag() {
 		return activeFlag;
 	}
 
-	public void setActiveFlag(Integer activeFlag) {
+	public void setActiveFlag(int activeFlag) {
 		this.activeFlag = activeFlag;
 	}
 

@@ -8,14 +8,14 @@ public class HelpTypeDTO implements Serializable, CourseMakerData, LookupInterfa
 
 	private static final long serialVersionUID = 1L;
 
-	private Integer helpTypeID, companyID;
+	private int helpTypeID, companyID;
 	private String helpTypeName;
 
-	public Integer getHelpTypeID() {
+	public int getHelpTypeID() {
 		return helpTypeID;
 	}
 
-	public void setHelpTypeID(Integer helpTypeID) {
+	public void setHelpTypeID(int helpTypeID) {
 		this.helpTypeID = helpTypeID;
 	}
 
@@ -27,11 +27,11 @@ public class HelpTypeDTO implements Serializable, CourseMakerData, LookupInterfa
 		this.helpTypeName = helpTypeName;
 	}
 
-	public Integer getCompanyID() {
+	public int getCompanyID() {
 		return companyID;
 	}
 
-	public void setCompanyID(Integer companyID) {
+	public void setCompanyID(int companyID) {
 		this.companyID = companyID;
 	}
 }

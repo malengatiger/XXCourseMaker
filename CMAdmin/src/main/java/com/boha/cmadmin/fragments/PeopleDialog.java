@@ -538,7 +538,7 @@ public class PeopleDialog extends DialogFragment {
 		}
 	}
 
-	private int findProvinceIndex(Integer id) {
+	private int findProvinceIndex(int id) {
 		int found = -1;
 		if (provinceList == null) {
 			Log.e(LOG, "provinceList is null");

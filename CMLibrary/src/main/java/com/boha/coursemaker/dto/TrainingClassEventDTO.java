@@ -9,7 +9,7 @@ public class TrainingClassEventDTO implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Integer trainingClassEventID;
+	private int trainingClassEventID;
 
     private long eventID;
     private String eventName;
@@ -18,12 +18,12 @@ public class TrainingClassEventDTO implements Serializable {
     private String location;
     private long startDate;
     private long endDate;
-    private Integer trainingClassID, trainingClassCourseID;
+    private int trainingClassID, trainingClassCourseID;
     
-	public Integer getTrainingClassEventID() {
+	public int getTrainingClassEventID() {
 		return trainingClassEventID;
 	}
-	public void setTrainingClassEventID(Integer trainingClassEventID) {
+	public void setTrainingClassEventID(int trainingClassEventID) {
 		this.trainingClassEventID = trainingClassEventID;
 	}
 	public long getEventID() {
@@ -68,16 +68,16 @@ public class TrainingClassEventDTO implements Serializable {
 	public void setEndDate(long endDate) {
 		this.endDate = endDate;
 	}
-	public Integer getTrainingClassID() {
+	public int getTrainingClassID() {
 		return trainingClassID;
 	}
-	public void setTrainingClassID(Integer trainingClassID) {
+	public void setTrainingClassID(int trainingClassID) {
 		this.trainingClassID = trainingClassID;
 	}
-	public Integer getTrainingClassCourseID() {
+	public int getTrainingClassCourseID() {
 		return trainingClassCourseID;
 	}
-	public void setTrainingClassCourseID(Integer trainingClassCourseID) {
+	public void setTrainingClassCourseID(int trainingClassCourseID) {
 		this.trainingClassCourseID = trainingClassCourseID;
 	}
 }
